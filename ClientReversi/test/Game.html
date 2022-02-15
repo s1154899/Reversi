@@ -1,0 +1,49 @@
+<html>
+<head>
+
+    <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine/jasmine.css">
+
+    <script type="text/javascript" src="jasmine/lib/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine/boot.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script src="../js/Game.js"></script>
+    <script src="../js/Game.Model.js"></script>
+    <script src="../js/Game.Data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+
+<script>
+    beforeAll(function(done) {
+        $(function(){
+            done();
+        });
+    });
+
+    describe("Test if game exist", function(){
+        it("should be true if it exits ", function(){
+
+            expect(Boolean(Game)).toBe(true);
+        })
+    });
+    describe("Test if game.data.init exist", function(){
+        it("should be true if it exits ", function(){
+
+            expect(Boolean(Game.Data.init)).toBe(true);
+        })
+    });
+    describe("Test if game.model.init exist", function(){
+        it("should be true if it exits ", function(){
+
+            expect(Boolean(Game.Model.init)).toBe(true);
+        })
+    });
+
+
+</script>
+
+</body>
+</html>

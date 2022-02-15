@@ -1,0 +1,52 @@
+<html>
+<head>
+
+    <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine/jasmine.css">
+
+    <script type="text/javascript" src="jasmine/lib/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine/boot.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script src="../js/LocalLogging.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+
+<script>
+    beforeAll(function(done) {
+        $(function(){
+            done();
+        });
+    });
+
+    describe("Test if information is logged", function(){
+        it("should be filled ", function(){
+            LocalLogging.log("testLog","test","test message");
+            expect(Boolean(localStorage.getItem("testLog"))).toBe(true);
+        })
+    });
+
+    describe("Test if is destroyed", function(){
+        it("should be empty ", function(){
+            LocalLogging.log("testLog","test","test message");
+            LocalLogging.removeLog("testLog");
+            expect(Boolean(localStorage.getItem("testLog"))).toBe(false);
+        })
+    });
+
+    describe("Test if history returns", function(){
+        it("should be filled ", function(){
+            LocalLogging.log("testLog","test","test message");
+
+            expect(Boolean(LocalLogging.history("testLog"))).toBe(true);
+        })
+    });
+
+
+
+</script>
+
+</body>
+</html>

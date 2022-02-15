@@ -1,0 +1,42 @@
+<html>
+<head>
+
+    <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine/jasmine.css">
+
+    <script type="text/javascript" src="jasmine/lib/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine/boot.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script src="../js/LocalLogging.js"></script>
+    <script src="../js/FeedbackWidget.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+
+<script>
+    beforeAll(function(done) {
+        $(function(){
+            done();
+        });
+    });
+
+    describe("Test if feedback-success widget is hidden by javascript", function(){
+        it("style.display should be hidden", function(){
+            FeedbackWidget.SetElementId("feedback-success");
+            x.hide("feedback-success");
+            expect(document.getElementById("feedback-success").style.display).toBe("none");
+        })
+    })
+
+</script>
+
+<div id="feedback-success" class="alert alert-success" role="alert" style="display:block">
+    <p>Veel succes met deze module!</p>
+    <button id="feedback-success-accept" name="feedback-accept">Accept</button>
+    <button name="feedback-reject">Reject</button>
+    <button name="feedback-close">X</button>
+</div>
+</body>
+</html>

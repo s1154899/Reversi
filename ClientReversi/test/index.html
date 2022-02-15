@@ -33,24 +33,6 @@ describe("Application initialisation", function() {
     expect(result).toBe(true);
   });
 });
-
-
-
-describe("Test if feedback-success widget is hidden by javascript", function(){
-    it("style.display should be hidden", function(){
-        var x = new FeedbackWidget("feedback-success");
-        x.hide("feedback-success");
-        expect(document.getElementById("feedback-success").style.display).toBe("none");
-    })
-})
-
-</script>
-
-<div id="feedback-success" class="alert alert-success" role="alert" style="display:block">
-    <p>Veel succes met deze module!</p>
-    <button id="feedback-success-accept" name="feedback-accept">Accept</button>
-    <button name="feedback-reject">Reject</button>
-    <button name="feedback-close">X</button>
-</div>
+    </script>
 </body>
 </html>
