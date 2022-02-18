@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "49sqp18rJ4O4MTTQpEmSBrQhMY4E6O/YPat5nP5bFo8=",
+  "Source": "ReversiRestApi",
+  "BasePath": "_content/ReversiRestApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

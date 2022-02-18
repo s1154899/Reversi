@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d4405ac3-a5bc-4c20-ad91-2b3aeb74dac9": {
+      "ProjectGuid": "d4405ac3-a5bc-4c20-ad91-2b3aeb74dac9",
+      "DisplayName": "ReversiRestApi",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "cb72d288-b0d9-465b-8134-d0fb870b0567": {
+      "ProjectGuid": "cb72d288-b0d9-465b-8134-d0fb870b0567",
+      "DisplayName": "UnitTestReversieApi",
+      "ColorIndex": 1
+    },
+    "e8deac23-058a-4d28-be1e-1d0d2e63b66d": {
+      "ProjectGuid": "e8deac23-058a-4d28-be1e-1d0d2e63b66d",
+      "DisplayName": "NUnitTestReversiApi",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
