@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ReversieISpelImplementatie.Model
 {
     public class Spel : ISpel
     {
-        private const int bordOmvang = 8;
-        private readonly int[,] richting = new int[8, 2] {
+        public int bordOmvang = 8;
+        public readonly int[,] richting = new int[8, 2] {
                                 {  0,  1 },         // naar rechts
                                 {  0, -1 },         // naar links
                                 {  1,  0 },         // naar onder
@@ -25,18 +27,21 @@ namespace ReversieISpelImplementatie.Model
         public string Speler1Token { get; set; }
         public string Speler2Token { get; set; }
 
+
         private Kleur[,] bord;
-        public Kleur[,] Bord
-        {
-            get
-            {
+
+        public Kleur[,] Bord {
+            get {
+
+
                 return bord;
             }
-            set
-            {
+            set {
                 bord = value;
             }
+
         }
+
 
         public Kleur AandeBeurt { get; set; }
         public Spel()
@@ -153,7 +158,7 @@ namespace ReversieISpelImplementatie.Model
                 AandeBeurt = Kleur.Wit;
         }
 
-        private static bool PositieBinnenBordGrenzen(int rij, int kolom)
+        private bool PositieBinnenBordGrenzen(int rij, int kolom)
         {
             return (rij >= 0 && rij < bordOmvang &&
                     kolom >= 0 && kolom < bordOmvang);

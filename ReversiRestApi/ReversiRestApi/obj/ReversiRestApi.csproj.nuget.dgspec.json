@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danie\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {}
+    "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danie\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {
+    "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
+        "projectUniqueName": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
         "projectName": "ReversiRestApi",
-        "projectPath": "C:\\Users\\danie\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
-        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\source\\repos\\ReversiRestApi\\ReversiRestApi\\obj\\",
+        "projectPath": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
+        "packagesPath": "C:\\Users\\edmar\\.nuget\\packages\\",
+        "outputPath": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiRestApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\edmar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +45,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -67,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
