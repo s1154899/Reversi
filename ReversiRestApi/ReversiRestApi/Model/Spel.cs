@@ -71,7 +71,10 @@ namespace ReversieISpelImplementatie.Model
 
         public bool Afgelopen()     // return true als geen van de spelers een zet kan doen
         {
-            throw new NotImplementedException();    // todo!
+            //throw new NotImplementedException();    // todo!
+            if (!IsErEenZetMogelijk(AandeBeurt) && !IsErEenZetMogelijk(GetKleurTegenstander(AandeBeurt))) { return true; }
+            return false;
+
         }
 
         public Kleur OverwegendeKleur()
@@ -104,7 +107,27 @@ namespace ReversieISpelImplementatie.Model
 
         public void DoeZet(int rijZet, int kolomZet)
         {
-            throw new NotImplementedException();    // todo: maak hierbij gebruik van de reeds in deze klassen opgenomen methoden!
+            //throw new NotImplementedException();    // todo: maak hierbij gebruik van de reeds in deze klassen opgenomen methoden!
+            if (ZetMogelijk(rijZet, kolomZet))
+            {
+                if (ZetOpBordEnNogVrij(rijZet, kolomZet))
+                {
+
+                    for (int i = 0; i < 8; i++)
+                    {
+
+                        DraaiStenenVanTegenstanderInOpgegevenRichtingOmIndienIngesloten(rijZet, kolomZet, AandeBeurt, richting[i, 0], richting[i, 1]);
+                        
+
+                    }
+                    Bord[rijZet, kolomZet] = AandeBeurt;
+                    WisselBeurt();
+
+                }
+            }
+            else {
+                throw new Exception($"Zet ({rijZet},{kolomZet}) is niet mogelijk!");
+            }
         }
 
         private static Kleur GetKleurTegenstander(Kleur kleur)

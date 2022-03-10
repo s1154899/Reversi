@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReversieISpelImplementatie.Model;
 using ReversiRestApi.Model;
+using Kleur = ReversiRestApi.Model.Kleur;
 
 namespace ReversiRestApi.Controllers
 {
-    [Route("api/Spel")]
+    
     [ApiController]
     public class SpelController : ControllerBase
     {
@@ -15,8 +16,9 @@ namespace ReversiRestApi.Controllers
             iRepository = repository;
         }
 
-        
+
         // GET api/spellen
+        [Route("api/Spel")]
         [HttpGet]
         public ActionResult<IEnumerable<string>> GetSpelOmschrijvingenVanSpellenMetWachtendeSpeler()
         {
@@ -25,10 +27,10 @@ namespace ReversiRestApi.Controllers
             return returns == null ? NotFound() : Ok(returns);
 
         }
-        
-        
-        //TODO add bad result
 
+
+        //TODO add bad result
+        [Route("api/Spel")]
         [HttpPost]
         public ActionResult PostCreateGame([FromHeader] string speler1Token, [FromHeader] string omschrijving) {
 
@@ -39,19 +41,45 @@ namespace ReversiRestApi.Controllers
             return Ok();
 
         }
-        
-        
+
+
         // GET api/spels
-        [Route("{token}/spel")]
-        [HttpPost]
-        public ActionResult<Spel> GetSpel(string token)
+        [Route("api/Spel/{speltoken}")]
+        [HttpGet]
+        public ActionResult<Spel> GetSpel(string speltoken)
         {
-             SendableSpel returns = new SendableSpel(iRepository.GetSpel(token));
+            SendableSpel returns = new SendableSpel(iRepository.GetSpel(speltoken));
 
             return Ok(returns);
 
         }
         
+        // GET api/spels
+        [Route("api/Spel/Beurt/{speltoken}")]
+        [HttpGet]
+        public ActionResult<Spel> GetBeurt(string speltoken)
+        {
+            Kleur AandeBeurt = (Kleur)iRepository.GetSpel(speltoken).AandeBeurt;
+
+            return Ok(AandeBeurt);
+
+        }
+
+        // GET api/spels
+        [Route("api/Spel/Zet/{speltoken}")]
+        [HttpPost]
+        public ActionResult<Spel> DoZet(string spelToken,[FromHeader] int rijZet,[FromHeader] int kolomZet)
+        {
+            try
+            {
+                iRepository.GetSpel(spelToken).DoeZet(rijZet, kolomZet);
+
+                return Ok();
+            }
+            catch (Exception ex) { 
+            return BadRequest(ex.Message);
+            }
+        }
 
     }
 
