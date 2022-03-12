@@ -7,7 +7,9 @@ const Game = (function(url){
 //Configuratie en state waarden
 let configMap = {
     apiUrl: url
+
 }
+
 
 // Private function init
 const privateInit = function(){
@@ -18,6 +20,7 @@ const privateInit = function(){
 // Waarde/object geretourneerd aan de outer scope
 return {
     init: privateInit,
+    getMockData : getMockData,
     Data: Data,
     Model:Model
 
