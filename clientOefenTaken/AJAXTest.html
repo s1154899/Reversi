@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="result"></div>
+<script>
+const url = "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=c3af2af9cfd832a16a22419d4d32697b";
+
+$.get( url, function( data ) {
+$( ".result" ).html( JSON.stringify(data) );
+alert( "Load was performed." );
+});
+
+
+</script>
+</body>
+</html>

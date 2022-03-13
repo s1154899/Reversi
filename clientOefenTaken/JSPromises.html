@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Promises</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="result"></div>
+<script>
+
+
+    const getWeatherData = function(){
+        const url = "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=c3af2af9cfd832a16a22419d4d32697b";
+        return $.get(url);
+
+    };
+
+    getWeatherData().then(d => {
+        return {
+            data: d,
+            meta: 'vanuit eerste schakel van de chain'
+        }
+    }).then(r => {
+        console.log(`Bericht ontvangen in tweede schakel: ${r.meta}`);
+        throw new Error('Error gegooid');
+    }).catch(e => {
+        console.log(`Error opgevangen, error bericht: ${e.message}`);
+    });
+
+
+</script>
+</body>
+</html>

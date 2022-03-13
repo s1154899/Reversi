@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07519f0e-a67d-4a82-8ed0-6d3c96deb569" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientReversi/js/Game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientReversi/js/LocalLogging.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientReversi/test/Game.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientReversi/test/feedback.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientReversi/test/logger.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientOefenTaken/AJAXTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientOefenTaken/JSPromises.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientReversi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientReversi/js/FeedbackWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/FeedbackWidget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientReversi/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientReversi/js/Game.Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientReversi/js/Game.Model.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -64,6 +60,8 @@
       <updated>1644916932852</updated>
       <workItem from="1644916934215" duration="6932000" />
       <workItem from="1644933796097" duration="3451000" />
+      <workItem from="1646913408204" duration="3649000" />
+      <workItem from="1646925702317" duration="978000" />
     </task>
     <servers />
   </component>
@@ -71,13 +69,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1060" y="275" key="FileChooserDialogImpl" timestamp="1646913650416">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1646913650416" />
     <state x="781" y="162" key="SettingsEditor" timestamp="1644916958863">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="162" key="SettingsEditor/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1644916958863" />
-    <state x="839" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1644933799193">
+    <state x="839" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1646925712900">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="839" y="329" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1644933799193" />
+    <state x="839" y="329" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1646925712900" />
   </component>
 </project>
