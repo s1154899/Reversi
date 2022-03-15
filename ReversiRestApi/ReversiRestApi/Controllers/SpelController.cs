@@ -30,7 +30,7 @@ namespace ReversiRestApi.Controllers
 
 
         //TODO add bad result
-        [Route("api/Spel")]
+        [Route("api/Spel/Create")]
         [HttpPost]
         public ActionResult PostCreateGame([FromHeader] string speler1Token, [FromHeader] string omschrijving) {
 
@@ -66,9 +66,9 @@ namespace ReversiRestApi.Controllers
         }
 
         // GET api/spels
-        [Route("api/Spel/Zet/{speltoken}")]
+        [Route("api/Spel/Zet/")]
         [HttpPost]
-        public ActionResult<Spel> DoZet(string spelToken,[FromHeader] int rijZet,[FromHeader] int kolomZet)
+        public ActionResult<Spel> DoZet([FromBody]string spelToken,[FromHeader] int rijZet,[FromHeader] int kolomZet)
         {
             try
             {

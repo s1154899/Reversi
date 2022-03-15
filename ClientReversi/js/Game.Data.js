@@ -8,9 +8,15 @@ Game.Data = (function(){
     let configMap = {
         apiUrl: url,
         mock : {
-            "path" : {
-                test: "test worth"
-            }
+            
+
+            "/api/Spel":[
+                "Potje snel reveri, dus niet lang nadenken",
+                "Ik zoek een gevorderde tegenspeler!",
+                "Na dit spel wil ik er nog een paar spelen tegen zelfde tegenstander",
+                "Na dit spel wil ik er nog een paar spelen tegen zelfde tegenstander"
+            ],
+
         }
     }
 
