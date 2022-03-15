@@ -1,33 +1,46 @@
 
 Game.Data = (function(){
+    let stateMap = {
+        environment : 'development'
+    }
 
     //Configuratie en state waarden
     let configMap = {
-        apiUrl: "c3af2af9cfd832a16a22419d4d32697b",
-            mock: [
-                {
-                    url: api/Spel/Beurt,
-                    data: 0
-                }
-            ]
-    };
+        apiUrl: url,
+        mock : {
+            "path" : {
+                test: "test worth"
+            }
+        }
+    }
 
-    function init(){}
+    function init(){
+        switch (stateMap.enviroment) {
+            case "development":
+                //TODO local mock request
+                break;
+            case "production":
+                //TODO online data request
+                break;
+            default:
+                throw new Error("no Environment selected");
+        }
 
 
+    }
+    const getMockData = function(url){
 
-    const get = function(url){
-        return $.get(url)
-            .then(r => {
-                return r
-            })
-            .catch(e => {
-                console.log(e.message);
-            });
-    };
+        //filter mock data, configMap.mock ... oei oei, moeilijk moeilijk :-)
+        const mockData = configMap.mock[url].test;
 
+        return new Promise((resolve, reject) => {
+            resolve(mockData);
+        });
+
+    }
     return{
-        get : get,
+
+        getMockData : getMockData,
         init : init
     }
 
