@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "m9AMquqlzBGRQtiD0NqzbzBmrHqiT4qal4/H1Hx6HAs=",
+  "Hash": "JFBIX7CmSRl7FouDbn8ArNQS3IPyoUABY+sW9m/OqT8=",
   "Source": "ReversiMvcApp",
   "BasePath": "_content/ReversiMvcApp",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
+      "Version": 2,
+      "Source": "ReversiRestApi",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "ReversiMvcApp\\wwwroot",

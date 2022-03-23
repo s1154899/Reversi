@@ -26,10 +26,10 @@ var FeedbackWidget = (function(){
         var container = document.getElementById(_elementId);
         switch (type) {
             case "succes":
-                container.className = "alert alert-success";
+                container.className = "alert alert-success fade-in";
                 break;
             default:
-                container.className = "alert alert-danger";
+                container.className = "alert alert-danger fade-in";
                 break;
         }
 

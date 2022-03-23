@@ -7,6 +7,8 @@ namespace ReversiMvcApp.Data
     {
         public reversiDbContext(DbContextOptions<reversiDbContext> options) : base(options) { }
 
+
+       
         public DbSet<Spelers> Spelers { get; set; }
 
     }

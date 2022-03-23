@@ -265,3 +265,12 @@ D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\zh-Hans\M
 D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\runtimes\win-arm\lib\net6.0\dotnet-aspnet-codegenerator-design.exe
 D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\runtimes\win-arm64\lib\net6.0\dotnet-aspnet-codegenerator-design.exe
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\ReversiRestApi.deps.json
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\ReversiRestApi.runtimeconfig.json
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\ReversiRestApi.exe
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\ReversiRestApi.dll
+D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\bin\Debug\net6.0\ReversiRestApi.pdb

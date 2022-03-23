@@ -46,6 +46,21 @@ namespace ReversiRestApi.Model
             return spel == null ? new Spel() : spel;
         }
 
+        public void RemoveSpel(string spelToken)
+        {
+            Spellen.Remove(Spellen.FirstOrDefault(spel => spel.Token == spelToken));
+        }
+
+        public void UpdateSpel(string spelToken, Spel spel)
+        {
+            try
+            {
+                int index = Spellen.FindIndex(spel => spel.Token == spelToken);
+                Spellen[index] = spel;
+            }
+            catch (Exception e) { }
+        }
+
         // ...
 
     }

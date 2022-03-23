@@ -22,7 +22,19 @@ namespace ReversiRestApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> GetSpelOmschrijvingenVanSpellenMetWachtendeSpeler()
         {
-            IEnumerable<String> returns = iRepository.GetSpellen().Select(F => F.Omschrijving);
+            IEnumerable<String> returns = iRepository.GetSpellen().Select(F =>  F.Omschrijving );
+
+            return returns == null ? NotFound() : Ok(returns);
+
+        }
+
+
+        [Route("api/Spel/waiting")]
+        [HttpGet]
+        public ActionResult<IEnumerable<Spel>> GetSpelVanSpellenMetWachtendeSpeler()
+        {
+            IEnumerable<SendableSpel> returns = iRepository.GetSpellen().Where(spel => spel.Speler2Token == null).Select(spel => new SendableSpel(spel));
+
 
             return returns == null ? NotFound() : Ok(returns);
 
@@ -42,6 +54,20 @@ namespace ReversiRestApi.Controllers
 
         }
 
+        //TODO add bad result
+        [Route("api/Spel/Join/{speltoken}")]
+        [HttpPost]
+        public ActionResult PostJoinGame(string speltoken,[FromHeader] string speler2Token)
+        {
+
+            Spel spel = iRepository.GetSpel(speltoken);
+            spel.Speler2Token = speler2Token;
+
+            iRepository.UpdateSpel(speltoken, spel);
+
+            return Ok(new SendableSpel(spel));
+
+        }
 
         // GET api/spels
         [Route("api/Spel/{speltoken}")]

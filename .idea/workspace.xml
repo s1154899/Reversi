@@ -2,12 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07519f0e-a67d-4a82-8ed0-6d3c96deb569" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clientOefenTaken/AJAXTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientOefenTaken/JSPromises.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientReversi/css/animation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientReversi/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientReversi/css/mobile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientReversi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientReversi/js/Game.Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientReversi/js/Game.Model.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientReversi/js/FeedbackWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/FeedbackWidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/project-colors.json" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/project-colors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/v17/.futdcache.v1" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/v17/.futdcache.v1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Data/reversiDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Data/reversiDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/ReversiMvcApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/ReversiMvcApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/ReversiMvcApp.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/ReversiMvcApp.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ref/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ref/ReversiMvcApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ref/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ref/ReversiMvcApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/ReversiMvcApp.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/ReversiMvcApp.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/ReversiMvcApp.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/ReversiMvcApp.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Controllers/SpelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Controllers/SpelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Model/ISpelRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Model/ISpelRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Model/SendableSpel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Model/SendableSpel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Model/SpelRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Model/SpelRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/ReversiRestApi.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/ReversiRestApi.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ref/ReversiRestApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ref/ReversiRestApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ref/ReversiRestApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ref/ReversiRestApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +66,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -41,6 +84,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -62,6 +106,7 @@
       <workItem from="1644933796097" duration="3451000" />
       <workItem from="1646913408204" duration="3649000" />
       <workItem from="1646925702317" duration="978000" />
+      <workItem from="1648028717008" duration="9554000" />
     </task>
     <servers />
   </component>
@@ -77,9 +122,9 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="162" key="SettingsEditor/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1644916958863" />
-    <state x="839" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1646925712900">
+    <state x="839" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1648028717004">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="839" y="329" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1646925712900" />
+    <state x="839" y="329" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1648028717004" />
   </component>
 </project>

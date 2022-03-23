@@ -8,8 +8,9 @@ namespace ReversiRestApi.Model
 
         public int bordOmvang;
         public int[,] richting;
-
-        public SendableSpel(Spel spel) { 
+            public SendableSpel() { }
+        
+            public SendableSpel(Spel spel) { 
             bordOmvang = spel.bordOmvang; 
             richting = spel.richting; 
             ID = spel.ID;

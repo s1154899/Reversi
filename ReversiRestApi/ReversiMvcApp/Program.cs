@@ -17,6 +17,8 @@ builder.Services.AddControllersWithViews();
 //builder.Services.AddControllers().AddNewtonsoftJson()
 builder.Services.AddDbContext<reversiDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
