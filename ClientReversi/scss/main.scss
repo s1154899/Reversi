@@ -1,0 +1,149 @@
+$white-color : #F0EAD6;
+$black-color : #000000;
+$green-color : #3F704D;
+$gray-green-color : #90917E;
+$border-color: #C19A6B;
+
+
+#board-playing{
+  width: 80vh;
+  height: 80vh;
+}
+.board-container{
+  background: $border-color;
+  display: grid;
+  width: 100%;
+  height: 100%;
+
+  padding: 1% 1% 1% 1%;
+
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+
+}
+
+.board-green-square{
+  background: $green-color;
+  border: 0.25vh solid $gray-green-color;
+
+}
+
+@mixin discs{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+@mixin animation{
+
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+
+}
+
+.discs{
+
+  &-black{
+    @include discs;
+    background: $black-color;
+
+  }
+
+  &-white{
+    @include discs;
+    background: $white-color;
+  }
+
+  &-animation{
+    @include discs;
+    @include animation;
+    &-to-black{
+      background: $white-color;
+      @include animation;
+      @include discs;
+      animation-name: flip-to-black;
+    }
+    &-to-white{
+      background: $black-color;
+      @include animation;
+      @include discs;
+      animation-name: flip-to-white;
+    }
+    &-drop-white{
+      background: $white-color;
+      @include animation;
+      @include discs;
+      animation-name: drop-in;
+    }
+    &-drop-black{
+      background: $black-color;
+      @include animation;
+      @include discs;
+      animation-name: drop-in;
+    }
+  }
+}
+
+
+
+@keyframes flip-to-black {
+
+
+  50% {width: 0; background: $black-color;}
+  100%{width: 100%; background: $black-color;}
+
+}
+
+@keyframes flip-to-white {
+
+  50% {width: 0; background: $white-color}
+  100%{width: 100%;background: $white-color;}
+
+}
+
+@keyframes drop-in {
+
+  0%{width: 150%;height: 150%; }
+  100%{width: 100%;}
+
+}
+
+
+
+
+
+
+/*after game css*/
+#after-game-container{
+  margin-left: 5vw;
+  display: grid;
+  grid-template-column: 20vw 20vw 20vw 30vw;
+  grid-template-rows: 10vh 5vh 5vh auto;
+  grid-template-areas:
+    "gewonnen gewonnen . board"
+    "speler1naam speler1stand . board"
+    "speler2naam speler2stand . board"
+    "returnbutton . . board"
+;
+}
+
+#board-after-game{
+  width: 30vw;
+  height: 30vw;
+  justify-self: end;
+}
+
+
+#gewonnen-header-1{
+  grid-area: gewonnen;
+}
+
+#speler1-naam{grid-area: speler1naam;}
+#speler2-naam{grid-area: speler2naam;}
+#speler1-stand{grid-area: speler1stand;}
+#speler2-stand{grid-area: speler2stand;}
+
+#return-button{
+  grid-area: returnbutton;
+
+  align-self: end;
+}
