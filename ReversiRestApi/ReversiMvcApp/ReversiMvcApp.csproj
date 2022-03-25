@@ -8,6 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\animation.css" />
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\css\mobile.css" />
+    <None Include="wwwroot\js\board.js" />
+    <None Include="wwwroot\js\FeedbackWidget.js" />
+    <None Include="wwwroot\js\Game.Data.js" />
+    <None Include="wwwroot\js\Game.js" />
+    <None Include="wwwroot\js\Game.Model.js" />
+    <None Include="wwwroot\js\LocalLogging.js" />
+    <None Include="wwwroot\css\scss\main.css" />
+    <None Include="wwwroot\css\scss\main.css.map" />
+    <None Include="wwwroot\css\scss\main.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0" />

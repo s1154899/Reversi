@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+    <link rel="stylesheet" href="~/css/scss/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="~/js/board.js">
+
+    </script>
+<h1>Game</h1>
+<div id="board-playing" class="">
+
+</div>
+<script>
+    function start() {
+        var b = document.getElementById("board-playing");
+        b.append(board.create(8, 8));
+    }
+    start();
+</script>

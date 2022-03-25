@@ -69,5 +69,17 @@ namespace ReversiMvcApp.Controllers
                 return View();
             }
         }
+
+
+        [HttpGet]
+        public ActionResult spel() {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult eindscherm()
+        {
+            return View();
+        }
     }
 }
