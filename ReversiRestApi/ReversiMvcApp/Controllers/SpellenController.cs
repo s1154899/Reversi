@@ -15,8 +15,18 @@ namespace ReversiMvcApp.Controllers
             return View("index",APIReversi.GetWaitingSpel().Result);
         }
 
+        public ActionResult SpellenSpeler()
+        {
+            ClaimsPrincipal currentUser = this.User;
+            var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            return View("spellenSpeler", APIReversi.GetSpellenSpeler(currentUserID).Result);
+
+        }
+
+
         // GET: SpellenControllers/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
             return View();
         }
@@ -50,7 +60,7 @@ namespace ReversiMvcApp.Controllers
 
 
         // GET: SpellenControllers/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
             return View();
         }
@@ -58,7 +68,7 @@ namespace ReversiMvcApp.Controllers
         // POST: SpellenControllers/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(string id, IFormCollection collection)
         {
             try
             {
@@ -72,7 +82,7 @@ namespace ReversiMvcApp.Controllers
 
 
         [HttpGet]
-        public ActionResult spel() {
+        public ActionResult Spel() {
             return View();
         }
 
@@ -80,6 +90,17 @@ namespace ReversiMvcApp.Controllers
         public ActionResult eindscherm()
         {
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Join(string id) {
+            ClaimsPrincipal currentUser = this.User;
+            var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            
+
+            APIReversi.PostJoin(id,currentUserID).Wait();
+        return RedirectToAction(nameof(Spel));
         }
     }
 }

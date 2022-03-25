@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddScoped<ISpelRepository, SpelRepository>();
+builder.Services.AddScoped<ISpelRepository, SpelRepositoryDB>();
 //builder.Services.AddControllers().AddNewtonsoftJson()
 builder.Services.AddDbContext<ReversiContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ReversiDatabase")));
 

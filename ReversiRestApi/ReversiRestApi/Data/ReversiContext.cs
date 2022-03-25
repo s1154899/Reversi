@@ -6,7 +6,7 @@ namespace ReversiRestApi.Data
     {
         public ReversiContext(DbContextOptions<ReversiContext> options) : base(options) { }
 
-        public DbSet<Spel> Spellen { get; set; }
+        public DbSet<SpelData> Spellen { get; set; }
 
         public DbSet<Speler> Spelers { get; set; }
         

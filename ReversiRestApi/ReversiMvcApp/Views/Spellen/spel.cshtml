@@ -1,7 +1,17 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model ReversiRestApi.Model.Spel
 @{
+    int i = 0;
+    string build = "";
+    foreach (var st in Model.Bord)
+    {
+
+        build += "PlaceDisk(" + (i % Model.bordOmvang) + "," + (i / Model.bordOmvang) +","+st+");";
+        i++;
+    }
+
 }
     <link rel="stylesheet" href="~/css/scss/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
@@ -16,6 +26,6 @@
     function start() {
         var b = document.getElementById("board-playing");
         b.append(board.create(8, 8));
-    }
+        @build
     start();
 </script>

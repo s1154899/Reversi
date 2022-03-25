@@ -5,11 +5,18 @@ namespace ReversiRestApi.Data
 {
     public class Bord
     {
+        public Bord() { }
+        public Bord(string token, string bespeeldbord) { 
+            Token = token;
+            BespeeldBord = bespeeldbord;
+
+        }
+
         [Key]
         [ForeignKey("Token")]
         public string Token { get; set; }
         
-        public Spel Spel { get; set; }
+        public SpelData Spel { get; set; }
         
         public string BespeeldBord  { get; set; }
     }

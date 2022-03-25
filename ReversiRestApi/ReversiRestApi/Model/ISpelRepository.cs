@@ -1,4 +1,4 @@
-﻿using ReversieISpelImplementatie.Model;
+﻿using ReversiRestApi.Model;
 
 namespace ReversiRestApi.Model
 {

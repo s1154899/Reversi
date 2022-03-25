@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Converters;
+using ReversiRestApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,22 +7,13 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ReversieISpelImplementatie.Model
+namespace ReversiRestApi.Model
 {
     public enum Kleur { Geen, Wit, Zwart };
 
-    public interface ISpel
+    public interface ISpel 
     {
-        int ID { get; set; }
-        string Omschrijving { get; set; }
 
-        //het unieke token van het spel
-        string Token { get; set; }
-        string Speler1Token { get; set; }
-        string Speler2Token { get; set; }
-
-        Kleur[,] Bord { get; set; }        
-        Kleur AandeBeurt { get; set; }
         void Pas();
         bool Afgelopen();
 

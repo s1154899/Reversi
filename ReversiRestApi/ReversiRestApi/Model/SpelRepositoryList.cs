@@ -1,13 +1,13 @@
-﻿using ReversieISpelImplementatie.Model;
+﻿using ReversiRestApi.Model;
 
 namespace ReversiRestApi.Model
 {
-    public class SpelRepository : ISpelRepository
+    public class SpelRepositoryList : ISpelRepository
     {
         // Lijst met tijdelijke spellen
         public List<Spel> Spellen { get; set; }
 
-        public SpelRepository()
+        public SpelRepositoryList()
         {
             Spel spel1 = new Spel();
             Spel spel2 = new Spel();

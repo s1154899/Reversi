@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReversieISpelImplementatie.Model;
 using ReversiRestApi.Model;
-using Kleur = ReversiRestApi.Model.Kleur;
+using ReversiRestApi.Model;
+
 
 namespace ReversiRestApi.Controllers
 {
@@ -33,7 +33,18 @@ namespace ReversiRestApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Spel>> GetSpelVanSpellenMetWachtendeSpeler()
         {
-            IEnumerable<SendableSpel> returns = iRepository.GetSpellen().Where(spel => spel.Speler2Token == null).Select(spel => new SendableSpel(spel));
+            IEnumerable<Spel> returns = iRepository.GetSpellen().Where(spel => spel.Speler2Token == null);
+
+
+            return returns == null ? NotFound() : Ok(returns);
+
+        }
+
+        [Route("api/Spel/Playing")]
+        [HttpGet]
+        public ActionResult<IEnumerable<Spel>> GetSpellenVanSpeler([FromHeader] string spelerToken)
+        {
+            IEnumerable<Spel> returns = iRepository.GetSpellen().Where(spel => spel.Speler2Token == spelerToken || spel.Speler1Token == spelerToken);
 
 
             return returns == null ? NotFound() : Ok(returns);
@@ -65,7 +76,7 @@ namespace ReversiRestApi.Controllers
 
             iRepository.UpdateSpel(speltoken, spel);
 
-            return Ok(new SendableSpel(spel));
+            return Ok(spel);
 
         }
 
@@ -74,18 +85,16 @@ namespace ReversiRestApi.Controllers
         [HttpGet]
         public ActionResult<Spel> GetSpel(string speltoken)
         {
-            SendableSpel returns = new SendableSpel(iRepository.GetSpel(speltoken));
-
-            return Ok(returns);
+            return Ok(iRepository.GetSpel(speltoken));
 
         }
         
         // GET api/spels
         [Route("api/Spel/Beurt/{speltoken}")]
         [HttpGet]
-        public ActionResult<Spel> GetBeurt(string speltoken)
+        public ActionResult<string> GetBeurt(string speltoken)
         {
-            Kleur AandeBeurt = (Kleur)iRepository.GetSpel(speltoken).AandeBeurt;
+            string AandeBeurt = iRepository.GetSpel(speltoken).AandeBeurt;
 
             return Ok(AandeBeurt);
 
