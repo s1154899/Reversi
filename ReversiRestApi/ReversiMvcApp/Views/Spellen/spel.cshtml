@@ -1,14 +1,20 @@
-﻿@*
+﻿@using System.Security.Claims
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 *@
 @model ReversiRestApi.Model.Spel
 @{
+
+    ClaimsPrincipal currentUser = this.User;
+            var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
+
     int i = 0;
     string build = "";
     foreach (var st in Model.Bord)
     {
 
-        build += "PlaceDisk(" + (i % Model.bordOmvang) + "," + (i / Model.bordOmvang) +","+st+");";
+        build += "board.place(" + (i / Model.bordOmvang) + "," +  (i % Model.bordOmvang)+","+st+");";
         i++;
     }
 
@@ -16,16 +22,66 @@
     <link rel="stylesheet" href="~/css/scss/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="~/js/board.js">
+    
+
+    </script>
+    <script src="~/js/AJAXReversiApi.js">
 
     </script>
 <h1>Game</h1>
+<details>
+    aandebeurt : @Model.AandeBeurt
+</details>
 <div id="board-playing" class="">
 
 </div>
 <script>
+
     function start() {
+        var Wit =  "Wit";
+        var Zwart =  "Zwart";
+        var Geen =  "Geen";
         var b = document.getElementById("board-playing");
-        b.append(board.create(8, 8));
+        b.append(board.create(8, 8,clickedSquare));
         @build
+    }
+
+    function clickedSquare(object){
+        console.log(object.getAttribute("x"));
+        console.log(object.getAttribute("y"));
+
+         var x= $.ajax({
+            url:'https://' + location.host + '/redirect/dozet/@currentUserID/@Model.Token/'+object.getAttribute("x")+'/'+object.getAttribute("y")+'',
+            
+            //data: '@Model.Token'
+        }).done(function(){ console.log(x);});
+
+        /*AJAXReversi.place(object.getAttribute("x"),object.getAttribute("y"),"@Model.Token");*/
+    }
+
+    function GetNewBord(){
+    var x= $.ajax({
+            url:'https://' + location.host + '/redirect/GetSpel/@Model.Token',
+            
+            //data: '@Model.Token'
+        }).done(function(){
+            //console.log(x);
+            for(var i = 0; x.responseJSON.bord.length > i ; i++){
+            //console.log(x.responseJSON.bord[i]);
+            board.flip( Math.floor((i / @Model.bordOmvang)) ,  Math.floor((i % @Model.bordOmvang)) ,x.responseJSON.bord[i]);
+            
+            }
+        
+        setTimeout(GetNewBord,1000);
+        });
+    
+    }
+    
+    GetNewBord();
+
+    
+
+
+    
     start();
 </script>

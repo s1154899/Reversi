@@ -36,7 +36,7 @@ namespace ReversiRestApi.Model
                 int i = 0;
                 foreach(string k in value) {
                     
-                    bord[(i % bordOmvang),(i / bordOmvang)] = (Kleur)Enum.Parse(new Kleur().GetType(), k); 
+                    bord[(i / bordOmvang),(i % bordOmvang)] = (Kleur)Enum.Parse(new Kleur().GetType(), k); 
                     i++;
                 }
             }
@@ -52,9 +52,9 @@ namespace ReversiRestApi.Model
                 return s;
             }
         }
-        
-        
-        
+
+
+
         private Kleur aandeBeurt { get; set; }
         
         public string AandeBeurt 
@@ -126,8 +126,22 @@ namespace ReversiRestApi.Model
             return ZetMogelijk(rijZet, kolomZet, aandeBeurt);
         }
 
-        public void DoeZet(int rijZet, int kolomZet)
+        public void DoeZet(int rijZet, int kolomZet,string speler)
         {
+            switch (aandeBeurt) {
+                case Kleur.Wit:
+                    if (Speler1Token == speler) { DoeZet(rijZet, kolomZet); } else { throw new Exception($"Deze speler is niet aan de beurt"); }
+                    break;
+                case Kleur.Zwart:
+                    if (Speler2Token == speler) { DoeZet(rijZet, kolomZet); } else { throw new Exception($"Deze speler is niet aan de beurt"); }
+                    break;
+                    
+
+            }
+            
+        }
+
+        public void DoeZet(int rijZet, int kolomZet) {
             //throw new NotImplementedException();    // todo: maak hierbij gebruik van de reeds in deze klassen opgenomen methoden!
             if (ZetMogelijk(rijZet, kolomZet))
             {
@@ -138,7 +152,7 @@ namespace ReversiRestApi.Model
                     {
 
                         DraaiStenenVanTegenstanderInOpgegevenRichtingOmIndienIngesloten(rijZet, kolomZet, aandeBeurt, richting[i, 0], richting[i, 1]);
-                        
+
 
                     }
                     bord[rijZet, kolomZet] = aandeBeurt;
@@ -146,9 +160,12 @@ namespace ReversiRestApi.Model
 
                 }
             }
-            else {
+            else
+            {
                 throw new Exception($"Zet ({rijZet},{kolomZet}) is niet mogelijk!");
             }
+
+
         }
 
         private static Kleur GetKleurTegenstander(Kleur kleur)

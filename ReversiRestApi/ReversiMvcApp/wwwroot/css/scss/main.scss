@@ -42,13 +42,13 @@ $border-color: #C19A6B;
 
 .discs{
 
-  &-black{
+  &-Zwart{
     @include discs;
     background: $black-color;
 
   }
 
-  &-white{
+  &-Wit{
     @include discs;
     background: $white-color;
   }
@@ -56,25 +56,25 @@ $border-color: #C19A6B;
   &-animation{
     @include discs;
     @include animation;
-    &-to-black{
+    &-to-Zwart{
       background: $white-color;
       @include animation;
       @include discs;
-      animation-name: flip-to-black;
+      animation-name: flip-to-Zwart;
     }
-    &-to-white{
+    &-to-Wit{
       background: $black-color;
       @include animation;
       @include discs;
-      animation-name: flip-to-white;
+      animation-name: flip-to-Wit;
     }
-    &-drop-white{
+    &-drop-Wit{
       background: $white-color;
       @include animation;
       @include discs;
       animation-name: drop-in;
     }
-    &-drop-black{
+    &-drop-Zwart{
       background: $black-color;
       @include animation;
       @include discs;
@@ -85,7 +85,7 @@ $border-color: #C19A6B;
 
 
 
-@keyframes flip-to-black {
+@keyframes flip-to-Zwart {
 
 
   50% {width: 0; background: $black-color;}
@@ -93,7 +93,7 @@ $border-color: #C19A6B;
 
 }
 
-@keyframes flip-to-white {
+@keyframes flip-to-Wit {
 
   50% {width: 0; background: $white-color}
   100%{width: 100%;background: $white-color;}

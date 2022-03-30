@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ReversiMvcApp.Models;
 using ReversiRestApi.Data;
@@ -7,8 +9,11 @@ using System.Security.Claims;
 
 namespace ReversiMvcApp.Controllers
 {
+    [Authorize]
     public class SpellenController : Controller
     {
+
+        
         // GET: SpellenControllers
         public ActionResult Index()
         {
@@ -22,13 +27,6 @@ namespace ReversiMvcApp.Controllers
 
             return View("spellenSpeler", APIReversi.GetSpellenSpeler(currentUserID).Result);
 
-        }
-
-
-        // GET: SpellenControllers/Details/5
-        public ActionResult Details(string id)
-        {
-            return View();
         }
 
         // GET: SpellenControllers/Create
@@ -59,31 +57,10 @@ namespace ReversiMvcApp.Controllers
         }
 
 
-        // GET: SpellenControllers/Delete/5
-        public ActionResult Delete(string id)
-        {
-            return View();
-        }
-
-        // POST: SpellenControllers/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(string id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-
         [HttpGet]
-        public ActionResult Spel() {
-            return View();
+        public ActionResult Spel(string id) {
+
+            return View("spel", APIReversi.GetSpel(id).Result);
         }
 
         [HttpGet]
@@ -96,11 +73,10 @@ namespace ReversiMvcApp.Controllers
         public ActionResult Join(string id) {
             ClaimsPrincipal currentUser = this.User;
             var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
-
+            APIReversi.PostJoin(id,currentUserID).Wait();
             
 
-            APIReversi.PostJoin(id,currentUserID).Wait();
-        return RedirectToAction(nameof(Spel));
+        return View("spel", APIReversi.GetSpel(id).Result); 
         }
     }
 }

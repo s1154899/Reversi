@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u+FZlhCZRS3NnD1ptFeraKXq/ByMEwupYRRHlCwxFrQ=",
+  "Hash": "lJZ7uKU7SykqoNU3NrUxKc7A7yTlyIXN2nqk+VuGzjY=",
   "Source": "ReversiMvcApp",
   "BasePath": "_content/ReversiMvcApp",
   "Mode": "Default",
@@ -1217,6 +1217,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\wwwroot\\js\\AJAXReversiApi.js",
+      "SourceId": "ReversiMvcApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\wwwroot\\",
+      "BasePath": "_content/ReversiMvcApp",
+      "RelativePath": "js/AJAXReversiApi.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AJAXReversiApi.js"
     },
     {
       "Identity": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\wwwroot\\js\\board.js",

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using ReversiRestApi.Model;
 using ReversiRestApi.Model;
 
@@ -73,6 +74,8 @@ namespace ReversiRestApi.Controllers
 
             Spel spel = iRepository.GetSpel(speltoken);
             spel.Speler2Token = speler2Token;
+            spel.AandeBeurt = Kleur.Wit.ToString();
+
 
             iRepository.UpdateSpel(speltoken, spel);
 
@@ -103,11 +106,14 @@ namespace ReversiRestApi.Controllers
         // GET api/spels
         [Route("api/Spel/Zet/")]
         [HttpPost]
-        public ActionResult<Spel> DoZet([FromBody]string spelToken,[FromHeader] int rijZet,[FromHeader] int kolomZet)
+        public ActionResult<Spel> DoZet([FromHeader] string speler,[FromHeader]string spelToken,[FromHeader] int rijZet,[FromHeader] int kolomZet)
         {
             try
             {
-                iRepository.GetSpel(spelToken).DoeZet(rijZet, kolomZet);
+
+                Spel spel = iRepository.GetSpel(spelToken);
+                spel.DoeZet(rijZet, kolomZet, speler);
+                iRepository.UpdateSpel(spelToken, spel);
 
                 return Ok();
             }

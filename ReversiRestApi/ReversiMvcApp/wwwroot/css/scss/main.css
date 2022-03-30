@@ -17,13 +17,13 @@
   border: 0.25vh solid #90917E;
 }
 
-.discs-black {
+.discs-Zwart {
   border-radius: 50%;
   width: 100%;
   height: 100%;
   background: #000000;
 }
-.discs-white {
+.discs-Wit {
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -37,7 +37,7 @@
   animation-duration: 0.15s;
   animation-iteration-count: 1;
 }
-.discs-animation-to-black {
+.discs-animation-to-Zwart {
   background: #F0EAD6;
   animation-fill-mode: forwards;
   animation-duration: 0.15s;
@@ -45,9 +45,9 @@
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  animation-name: flip-to-black;
+  animation-name: flip-to-Zwart;
 }
-.discs-animation-to-white {
+.discs-animation-to-Wit {
   background: #000000;
   animation-fill-mode: forwards;
   animation-duration: 0.15s;
@@ -55,9 +55,9 @@
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  animation-name: flip-to-white;
+  animation-name: flip-to-Wit;
 }
-.discs-animation-drop-white {
+.discs-animation-drop-Wit {
   background: #F0EAD6;
   animation-fill-mode: forwards;
   animation-duration: 0.15s;
@@ -67,7 +67,7 @@
   height: 100%;
   animation-name: drop-in;
 }
-.discs-animation-drop-black {
+.discs-animation-drop-Zwart {
   background: #000000;
   animation-fill-mode: forwards;
   animation-duration: 0.15s;
@@ -78,7 +78,7 @@
   animation-name: drop-in;
 }
 
-@keyframes flip-to-black {
+@keyframes flip-to-Zwart {
   50% {
     width: 0;
     background: #000000;
@@ -88,7 +88,7 @@
     background: #000000;
   }
 }
-@keyframes flip-to-white {
+@keyframes flip-to-Wit {
   50% {
     width: 0;
     background: #F0EAD6;
