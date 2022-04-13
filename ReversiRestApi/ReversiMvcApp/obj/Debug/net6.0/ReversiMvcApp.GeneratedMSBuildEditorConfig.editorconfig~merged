@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ReversiMvcApp
+build_property.RootNamespace = ReversiMvcApp
+build_property.ProjectDir = D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\xampp2\htdocs\Reversi\ReversiRestApi\ReversiMvcApp
+build_property._RazorSourceGeneratorDebug = 
+<<<<<<< HEAD
+=======
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Moderator/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZXJhdG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Redirects/DoZetRedirect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVkaXJlY3RzXERvWmV0UmVkaXJlY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spelers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spelers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spelers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spelers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spelers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spellen/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGxlblxjcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spellen/eindscherm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGxlblxlaW5kc2NoZXJtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spellen/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGxlblxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spellen/spel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGxlblxzcGVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spellen/spellenSpeler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGxlblxzcGVsbGVuU3BlbGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-957gaok6f5
+>>>>>>> samenvoeging
