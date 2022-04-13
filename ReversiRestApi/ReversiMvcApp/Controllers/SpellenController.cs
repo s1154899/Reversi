@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ReversiMvcApp.Models;
 using ReversiRestApi.Data;
+using ReversiRestApi.Model;
 using System.Diagnostics;
 using System.Security.Claims;
 
@@ -12,11 +14,15 @@ namespace ReversiMvcApp.Controllers
     [Authorize]
     public class SpellenController : Controller
     {
-
+        private UserManager<IdentityUser> _userManager;
+        public SpellenController(UserManager<IdentityUser> userManager) { 
+            _userManager = userManager;
+        }
         
         // GET: SpellenControllers
         public ActionResult Index()
         {
+            ViewBag.userMangager = _userManager;
             return View("index",APIReversi.GetWaitingSpel().Result);
         }
 
@@ -59,14 +65,10 @@ namespace ReversiMvcApp.Controllers
 
         [HttpGet]
         public ActionResult Spel(string id) {
-
-            return View("spel", APIReversi.GetSpel(id).Result);
-        }
-
-        [HttpGet]
-        public ActionResult eindscherm()
-        {
-            return View();
+            Spel s = APIReversi.GetSpel(id).Result;
+            ViewData["speler1"] = _userManager.FindByIdAsync(s.Speler1Token).Result.Email;
+            ViewData["speler2"] = _userManager.FindByIdAsync(s.Speler2Token).Result.Email;
+            return View("spel", s);
         }
 
         [HttpGet]

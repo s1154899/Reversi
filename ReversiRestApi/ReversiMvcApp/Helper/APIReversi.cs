@@ -15,6 +15,9 @@ namespace ReversiMvcApp.Models
         public static string GetBeurt = "/api/Spel/Beurt/";
         private static string _PostZet = "/api/Spel/Zet";
         private static string _GetWaitingSpellen = "api/Spel/waiting";
+        private static string _PostRemoveSPel = "api/Spel/Remove";
+        private static string _PostDoPas = "api/Spel/Pas";
+        private static string _GetIsAfgelopen = "api/Spel/afgelopen";
 
         private static HttpClient _client;
 
@@ -94,6 +97,23 @@ namespace ReversiMvcApp.Models
 
         }
 
+        public static async Task<string> PostRemoveSPel(string Token)
+        {
+            _client.DefaultRequestHeaders.Clear();
+
+            _client.DefaultRequestHeaders.Add("spelToken", Token);
+
+            var data = new StringContent("");
+
+            HttpContent content = data;
+
+            HttpResponseMessage response = await _client.PostAsync(_PostRemoveSPel , content);
+            _client.DefaultRequestHeaders.Clear();
+            return await response.Content.ReadAsStringAsync();
+
+        }
+
+
         public static async Task<string> PostDoZet(string spelToken, string rijZet,string kolomZet,string speler)
         {
 
@@ -112,6 +132,40 @@ namespace ReversiMvcApp.Models
             HttpResponseMessage response = await _client.PostAsync(_PostZet, content);
             _client.DefaultRequestHeaders.Clear();
             return await response.Content.ReadAsStringAsync();
+        }
+
+        public static async Task<string> PostDoPas(string spelToken, string speler)
+        {
+
+            _client.DefaultRequestHeaders.Clear();
+
+            _client.DefaultRequestHeaders.Add("spelToken", spelToken);
+            _client.DefaultRequestHeaders.Add("speler", speler);
+
+
+            var data = new StringContent("");
+
+            HttpContent content = data;
+
+            HttpResponseMessage response = await _client.PostAsync(_PostDoPas, content);
+            _client.DefaultRequestHeaders.Clear();
+            return await response.Content.ReadAsStringAsync();
+        }
+
+
+
+        public static async Task<String> IsAfgelopen(string spelToken)
+        {
+            _client.DefaultRequestHeaders.Clear();
+
+            _client.DefaultRequestHeaders.Add("spelToken", spelToken);
+            HttpResponseMessage response = await _client.GetAsync(_GetIsAfgelopen);
+
+            response.EnsureSuccessStatusCode();
+            var rawData = await response.Content.ReadAsStringAsync();
+            _client.DefaultRequestHeaders.Clear();
+            return rawData;
+
         }
 
     }

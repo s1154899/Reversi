@@ -19,8 +19,23 @@ namespace ReversiMvcApp.Controllers
         [Route("redirect/GetSpel/{spel}")]
         public IActionResult GetSpel( string spel)
         {
-
+            
             return Ok(APIReversi.GetSpel(spel).Result);
+        }
+
+        [Route("redirect/DoPas/{spel}/{speler}")]
+        public IActionResult GetDoPas(string spel,string speler)
+        {
+
+            return Ok(APIReversi.PostDoPas(spel,speler).Result);
+        }
+
+
+        [Route("redirect/Afgelopen/{spel}")]
+        public IActionResult GetIsAfgelopen(string spel)
+        {
+
+            return Ok(APIReversi.IsAfgelopen(spel).Result);
         }
     }
 }

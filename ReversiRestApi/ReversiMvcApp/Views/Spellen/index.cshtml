@@ -1,8 +1,9 @@
-﻿@model IEnumerable<ReversiRestApi.Model.ISpelData>
-
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<ReversiRestApi.Model.ISpelData>
+@inject UserManager<IdentityUser> userManager
 @{
     ViewData["Title"] = "index";
-    
+    //var man = Host.
 }
 
 <h1>View</h1>
@@ -17,13 +18,10 @@
                 @Html.DisplayNameFor(model => model.Omschrijving)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Token)
+                player one
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Speler1Token)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Speler2Token)
+                player two
             </th>
             <th></th>
         </tr>
@@ -35,19 +33,15 @@
                 @Html.DisplayFor(modelItem => item.Omschrijving)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Token)
+                
+                @Html.DisplayFor(modelItem => userManager.FindByIdAsync( item.Speler1Token).Result.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Speler1Token)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Speler2Token)
+                @Html.DisplayFor(modelItem => userManager.FindByIdAsync(item.Speler2Token).Result.Email)
             </td>
 
             <td>
                 <a asp-action="Join" asp-route-id="@item.Token">Join</a> |
-                <a asp-action="Details" asp-route-id="@item.Token">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Token">Delete</a> |
                 <a asp-action="Spel" asp-route-id="@item.Token">spel</a>
             </td>
         </tr>
