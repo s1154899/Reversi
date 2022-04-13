@@ -1,0 +1,150 @@
+#board-playing {
+  width: 80vh;
+  height: 80vh;
+}
+
+.board-container {
+  background: #C19A6B;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  padding: 1% 1% 1% 1%;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+.board-green-square {
+  background: #3F704D;
+  border: 0.25vh solid #90917E;
+}
+
+.discs-Zwart {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+.discs-Wit {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: #F0EAD6;
+}
+.discs-animation {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+}
+.discs-animation-to-Zwart {
+  background: #F0EAD6;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation-name: flip-to-Zwart;
+}
+.discs-animation-to-Wit {
+  background: #000000;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation-name: flip-to-Wit;
+}
+.discs-animation-drop-Wit {
+  background: #F0EAD6;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation-name: drop-in;
+}
+.discs-animation-drop-Zwart {
+  background: #000000;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation-name: drop-in;
+}
+
+@keyframes flip-to-Zwart {
+  50% {
+    width: 0;
+    background: #000000;
+  }
+  100% {
+    width: 100%;
+    background: #000000;
+  }
+}
+@keyframes flip-to-Wit {
+  50% {
+    width: 0;
+    background: #F0EAD6;
+  }
+  100% {
+    width: 100%;
+    background: #F0EAD6;
+  }
+}
+@keyframes drop-in {
+  0% {
+    width: 150%;
+    height: 150%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/*after game css*/
+#after-game-container {
+  margin-left: 5vw;
+  display: grid;
+  grid-template-column: 20vw 20vw 20vw 30vw;
+  grid-template-rows: 10vh 5vh 5vh auto;
+  grid-template-areas: "gewonnen gewonnen . board" "speler1naam speler1stand . board" "speler2naam speler2stand . board" "returnbutton . . board";
+}
+
+#board-after-game {
+  width: 30vw;
+  height: 30vw;
+  justify-self: end;
+}
+
+#gewonnen-header-1 {
+  grid-area: gewonnen;
+}
+
+#speler1-naam {
+  grid-area: speler1naam;
+}
+
+#speler2-naam {
+  grid-area: speler2naam;
+}
+
+#speler1-stand {
+  grid-area: speler1stand;
+}
+
+#speler2-stand {
+  grid-area: speler2stand;
+}
+
+#return-button {
+  grid-area: returnbutton;
+  align-self: end;
+}
+
+/*# sourceMappingURL=main.css.map */

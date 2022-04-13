@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-ReversiMvcApp-8CA2FBEA-E819-4529-B968-696B30837E27</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\animation.css" />
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\css\mobile.css" />
+    <None Include="wwwroot\js\board.js" />
+    <None Include="wwwroot\js\FeedbackWidget.js" />
+    <None Include="wwwroot\js\Game.Data.js" />
+    <None Include="wwwroot\js\Game.js" />
+    <None Include="wwwroot\js\Game.Model.js" />
+    <None Include="wwwroot\js\LocalLogging.js" />
+    <None Include="wwwroot\css\scss\main.css" />
+    <None Include="wwwroot\css\scss\main.css.map" />
+    <None Include="wwwroot\css\scss\main.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReversiRestApi\ReversiRestApi.csproj" />
+  </ItemGroup>
+
+</Project>

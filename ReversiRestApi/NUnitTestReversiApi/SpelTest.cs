@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using ReversieISpelImplementatie.Model;
+using ReversiRestApi.Model;
 using System;
 
 namespace NUnitTestProjectReversiSpel
@@ -28,7 +28,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
             //                     1 <
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             //var actual = spel.ZetMogelijk(8, 8);
             Exception ex = Assert.Throws<Exception>(delegate { spel.ZetMogelijk(8, 8); });
             Assert.That(ex.Message, Is.EqualTo("Zet (8,8) ligt buiten het bord!"));
@@ -53,7 +53,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(2, 3);
             // Assert
             Assert.IsTrue(actual);
@@ -76,7 +76,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(2, 3);
             // Assert
             Assert.IsFalse(actual);
@@ -88,8 +88,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 2 0 0 0 0  <
@@ -101,7 +101,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
             Assert.IsTrue(actual);
@@ -112,8 +112,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 1 0 0 0 0  <
@@ -126,7 +126,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
             Assert.IsFalse(actual);
@@ -137,13 +137,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Zwart;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 2 0 0 0 0  <
@@ -156,7 +156,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 2 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
             Assert.IsTrue(actual);
@@ -167,13 +167,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 2 0 0 0 0  <
@@ -186,7 +186,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 1 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
             Assert.IsFalse(actual);
@@ -202,8 +202,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 2 0 0 0 0  
@@ -215,7 +215,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
             Assert.IsTrue(actual);
@@ -226,8 +226,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 1 0 0 0 0  
@@ -240,7 +240,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
             Assert.IsFalse(actual);
@@ -251,13 +251,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 0] = Kleur.Zwart;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 0] = Kleur.Zwart;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -270,7 +270,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
             Assert.IsTrue(actual);
@@ -281,13 +281,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 0] = Kleur.Zwart;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 0] = Kleur.Zwart;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -301,7 +301,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
             Assert.IsFalse(actual);
@@ -338,7 +338,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(2, 2);
             // Assert
             Assert.IsFalse(actual);
@@ -360,7 +360,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(2, 2);
             // Assert
             Assert.IsFalse(actual);
@@ -372,9 +372,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Zwart;
-            spel.Bord[1, 6] = Kleur.Zwart;
-            spel.Bord[5, 2] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Zwart;
+            spel.bord[1, 6] = Kleur.Zwart;
+            spel.bord[5, 2] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 1  <
@@ -386,7 +386,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(0, 7);
             // Assert
             Assert.IsTrue(actual);
@@ -397,9 +397,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Zwart;
-            spel.Bord[1, 6] = Kleur.Zwart;
-            spel.Bord[5, 2] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Zwart;
+            spel.bord[1, 6] = Kleur.Zwart;
+            spel.bord[5, 2] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 2  <
@@ -411,7 +411,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 7);
             // Assert
             Assert.IsFalse(actual);
@@ -422,9 +422,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 2] = Kleur.Zwart;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Zwart;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -436,7 +436,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 1 0
             // 7   0 0 0 0 0 0 0 2 <
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(7, 7);
             // Assert
             Assert.IsTrue(actual);
@@ -447,9 +447,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 2] = Kleur.Zwart;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Zwart;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  <
@@ -461,7 +461,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 1 0
             // 7   0 0 0 0 0 0 0 1
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(7, 7);
             // Assert
             Assert.IsFalse(actual);
@@ -472,9 +472,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Zwart;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //     v
             // 0   2 0 0 0 0 0 0 0  <
@@ -486,7 +486,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 0);
             // Assert
             Assert.IsTrue(actual);
@@ -497,9 +497,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Zwart;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //     v
             // 0   1 0 0 0 0 0 0 0  <
@@ -511,7 +511,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0          
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(0, 0);
             // Assert
             Assert.IsFalse(actual);
@@ -522,9 +522,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Zwart;
-            spel.Bord[6, 1] = Kleur.Zwart;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Zwart;
+            spel.bord[6, 1] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //     v
             // 0   0 0 0 0 0 0 0 0  
@@ -536,7 +536,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 2 0 0 0 0 0 0
             // 7   1 0 0 0 0 0 0 0 <
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(7, 0);
             // Assert
             Assert.IsTrue(actual);
@@ -547,9 +547,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Zwart;
-            spel.Bord[6, 1] = Kleur.Zwart;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Zwart;
+            spel.bord[6, 1] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  <
@@ -561,7 +561,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 2 0 0 0 0 0 0
             // 7   2 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(7, 0);
             // Assert
             Assert.IsFalse(actual);
@@ -586,18 +586,18 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
             //                     1 <
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             //spel.DoeZet(8, 8);
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(8, 8); });
             Assert.That(ex.Message, Is.EqualTo("Zet (8,8) ligt buiten het bord!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.AreEqual(Kleur.Wit, spel.aandeBeurt);
         }
 
         [Test]
@@ -617,14 +617,14 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.DoeZet(2, 3);
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[2, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.AreEqual(Kleur.Wit, spel.aandeBeurt);
         }
 
         [Test]
@@ -644,19 +644,19 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(2, 3); });
             Assert.That(ex.Message, Is.EqualTo("Zet (2,3) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[2, 3]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[2, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.AreEqual(Kleur.Wit, spel.aandeBeurt);
         }
 
 
@@ -665,8 +665,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 2 0 0 0 0  <
@@ -678,16 +678,16 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.DoeZet(0, 3);
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[0, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[0, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[1, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[2, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.AreEqual(Kleur.Wit, spel.aandeBeurt);
         }
 
         [Test]
@@ -695,8 +695,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 1 0 0 0 0  <
@@ -709,20 +709,20 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(0, 3); });
             Assert.That(ex.Message, Is.EqualTo("Zet (0,3) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[1, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[2, 3]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 3]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[0, 3]);
 
         }
 
@@ -731,13 +731,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Zwart;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 2 0 0 0 0  <
@@ -750,17 +750,17 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 2 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.DoeZet(0, 3);
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[0, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[6, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[7, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[0, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[1, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[2, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[5, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[6, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[7, 3]);
 
         }
 
@@ -769,13 +769,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //           v
             // 0   0 0 0 2 0 0 0 0  <
@@ -788,19 +788,19 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 1 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(0, 3); });
             Assert.That(ex.Message, Is.EqualTo("Zet (0,3) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[1, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[2, 3]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[0, 3]);
         }
 
         [Test]
@@ -808,8 +808,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -821,14 +821,14 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.DoeZet(4, 7);
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 7]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 5]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 6]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 7]);
         }
 
         [Test]
@@ -836,8 +836,8 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 1 0 0 0 0  
@@ -850,21 +850,21 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             //spel.DoeZet(4, 7);
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(4, 7); });
             Assert.That(ex.Message, Is.EqualTo("Zet (4,7) is niet mogelijk!"));
 
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Geen, spel.Bord[4, 7]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 5]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 6]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[4, 7]);
         }
 
         [Test]
@@ -872,13 +872,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 0] = Kleur.Zwart;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 0] = Kleur.Zwart;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -891,17 +891,17 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.DoeZet(4, 7);
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 0]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 1]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 7]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 0]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 1]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 2]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 5]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 6]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 7]);
         }
 
         [Test]
@@ -909,13 +909,13 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[4, 0] = Kleur.Zwart;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Wit;
+            spel.bord[4, 0] = Kleur.Zwart;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -929,24 +929,24 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
 
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(4, 7); });
             Assert.That(ex.Message, Is.EqualTo("Zet (4,7) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 0]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 1]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 2]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 0]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 1]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 2]);
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Geen, spel.Bord[4, 7]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 5]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 6]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[4, 7]);
         }
 
 
@@ -980,17 +980,17 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(2, 2); });
             Assert.That(ex.Message, Is.EqualTo("Zet (2,2) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[2, 2]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[2, 2]);
         }
 
         [Test]
@@ -1010,17 +1010,17 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(2, 2); });
             Assert.That(ex.Message, Is.EqualTo("Zet (2,2) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[2, 2]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[2, 2]);
         }
 
 
@@ -1029,9 +1029,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Zwart;
-            spel.Bord[1, 6] = Kleur.Zwart;
-            spel.Bord[5, 2] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Zwart;
+            spel.bord[1, 6] = Kleur.Zwart;
+            spel.bord[5, 2] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 1  <
@@ -1043,15 +1043,15 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             spel.DoeZet(0, 7);
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 2]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 6]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[0, 7]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[5, 2]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[2, 5]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[1, 6]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[0, 7]);
         }
 
         [Test]
@@ -1059,9 +1059,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Zwart;
-            spel.Bord[1, 6] = Kleur.Zwart;
-            spel.Bord[5, 2] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Zwart;
+            spel.bord[1, 6] = Kleur.Zwart;
+            spel.bord[5, 2] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 2  <
@@ -1073,22 +1073,22 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(0, 7); });
             Assert.That(ex.Message, Is.EqualTo("Zet (0,7) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 5]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[1, 6]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[2, 5]);
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 2]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[5, 2]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 7]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[0, 7]);
         }
 
         [Test]
@@ -1096,9 +1096,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 2] = Kleur.Zwart;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Zwart;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -1110,15 +1110,15 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 1 0
             // 7   0 0 0 0 0 0 0 2 <
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.DoeZet(7, 7);
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[6, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[7, 7]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[2, 2]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[5, 5]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[6, 6]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[7, 7]);
         }
 
         [Test]
@@ -1126,9 +1126,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 2] = Kleur.Zwart;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Zwart;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
             //     0 1 2 3 4 5 6 7
             //                   v
             // 0   0 0 0 0 0 0 0 0  
@@ -1140,21 +1140,21 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 1 0
             // 7   0 0 0 0 0 0 0 1 <
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(7, 7); });
             Assert.That(ex.Message, Is.EqualTo("Zet (7,7) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 2]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[6, 6]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[2, 2]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[5, 5]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[6, 6]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[7, 7]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[7, 7]);
         }
 
         [Test]
@@ -1162,9 +1162,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Zwart;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //     v
             // 0   2 0 0 0 0 0 0 0  <
@@ -1176,15 +1176,15 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0 
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.DoeZet(0, 0);
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[0, 0]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 1]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 5]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[0, 0]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[1, 1]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[2, 2]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[5, 5]);
         }
 
         [Test]
@@ -1192,9 +1192,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Zwart;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //     v
             // 0   1 0 0 0 0 0 0 0  <
@@ -1206,24 +1206,24 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 0 0 0 0 0 0 0
             // 7   0 0 0 0 0 0 0 0          
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             //spel.DoeZet(0, 0);
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(0, 0); });
             Assert.That(ex.Message, Is.EqualTo("Zet (0,0) is niet mogelijk!"));
 
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 1]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 2]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[1, 1]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[2, 2]);
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 5]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[5, 5]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 0]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[0, 0]);
         }
 
         [Test]
@@ -1231,9 +1231,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Zwart;
-            spel.Bord[6, 1] = Kleur.Zwart;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Zwart;
+            spel.bord[6, 1] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //     v
             // 0   0 0 0 0 0 0 0 0  
@@ -1245,15 +1245,15 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 2 0 0 0 0 0 0
             // 7   1 0 0 0 0 0 0 0 <
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             spel.DoeZet(7, 0);
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[7, 0]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[6, 1]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 2]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 5]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[7, 0]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[6, 1]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[5, 2]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[2, 5]);
         }
 
         [Test]
@@ -1261,9 +1261,9 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Zwart;
-            spel.Bord[6, 1] = Kleur.Zwart;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Zwart;
+            spel.bord[6, 1] = Kleur.Zwart;
             //     0 1 2 3 4 5 6 7
             //     v
             // 0   0 0 0 0 0 0 0 0  
@@ -1275,23 +1275,23 @@ namespace NUnitTestProjectReversiSpel
             // 6   0 2 0 0 0 0 0 0
             // 7   2 0 0 0 0 0 0 0 <
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             Exception ex = Assert.Throws<Exception>(delegate { spel.DoeZet(7, 0); });
             Assert.That(ex.Message, Is.EqualTo("Zet (7,0) is niet mogelijk!"));
 
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[3, 3]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[4, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[3, 4]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[4, 3]);
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[6, 1]);
+            Assert.AreEqual(Kleur.Wit, spel.bord[2, 5]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[5, 2]);
+            Assert.AreEqual(Kleur.Zwart, spel.bord[6, 1]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[7, 7]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[7, 7]);
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[7, 0]);
+            Assert.AreEqual(Kleur.Geen, spel.bord[7, 0]);
         }
 
         [Test]
@@ -1299,70 +1299,70 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange  (zowel wit als zwart kunnen niet meer)
             Spel spel = new Spel();
-            spel.Bord[0, 0] = Kleur.Wit;
-            spel.Bord[0, 1] = Kleur.Wit;
-            spel.Bord[0, 2] = Kleur.Wit;
-            spel.Bord[0, 3] = Kleur.Wit;
-            spel.Bord[0, 4] = Kleur.Wit;
-            spel.Bord[0, 5] = Kleur.Wit;
-            spel.Bord[0, 6] = Kleur.Wit;
-            spel.Bord[0, 7] = Kleur.Wit;
-            spel.Bord[1, 0] = Kleur.Wit;
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[1, 2] = Kleur.Wit;
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[1, 4] = Kleur.Wit;
-            spel.Bord[1, 5] = Kleur.Wit;
-            spel.Bord[1, 6] = Kleur.Wit;
-            spel.Bord[1, 7] = Kleur.Wit;
-            spel.Bord[2, 0] = Kleur.Wit;
-            spel.Bord[2, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[2, 4] = Kleur.Wit;
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[2, 6] = Kleur.Wit;
-            spel.Bord[2, 7] = Kleur.Wit;
-            spel.Bord[3, 0] = Kleur.Wit;
-            spel.Bord[3, 1] = Kleur.Wit;
-            spel.Bord[3, 2] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[3, 4] = Kleur.Wit;
-            spel.Bord[3, 5] = Kleur.Wit;
-            spel.Bord[3, 6] = Kleur.Wit;
-            spel.Bord[3, 7] = Kleur.Geen;
-            spel.Bord[4, 0] = Kleur.Wit;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Geen;
-            spel.Bord[4, 7] = Kleur.Geen;
-            spel.Bord[5, 0] = Kleur.Wit;
-            spel.Bord[5, 1] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[5, 4] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[5, 6] = Kleur.Geen;
-            spel.Bord[5, 7] = Kleur.Zwart;
-            spel.Bord[6, 0] = Kleur.Wit;
-            spel.Bord[6, 1] = Kleur.Wit;
-            spel.Bord[6, 2] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[6, 4] = Kleur.Wit;
-            spel.Bord[6, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
-            spel.Bord[6, 7] = Kleur.Geen;
-            spel.Bord[7, 0] = Kleur.Wit;
-            spel.Bord[7, 1] = Kleur.Wit;
-            spel.Bord[7, 2] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Wit;
-            spel.Bord[7, 4] = Kleur.Wit;
-            spel.Bord[7, 5] = Kleur.Wit;
-            spel.Bord[7, 6] = Kleur.Wit;
-            spel.Bord[7, 7] = Kleur.Wit;
+            spel.bord[0, 0] = Kleur.Wit;
+            spel.bord[0, 1] = Kleur.Wit;
+            spel.bord[0, 2] = Kleur.Wit;
+            spel.bord[0, 3] = Kleur.Wit;
+            spel.bord[0, 4] = Kleur.Wit;
+            spel.bord[0, 5] = Kleur.Wit;
+            spel.bord[0, 6] = Kleur.Wit;
+            spel.bord[0, 7] = Kleur.Wit;
+            spel.bord[1, 0] = Kleur.Wit;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[1, 2] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[1, 4] = Kleur.Wit;
+            spel.bord[1, 5] = Kleur.Wit;
+            spel.bord[1, 6] = Kleur.Wit;
+            spel.bord[1, 7] = Kleur.Wit;
+            spel.bord[2, 0] = Kleur.Wit;
+            spel.bord[2, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[2, 4] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[2, 6] = Kleur.Wit;
+            spel.bord[2, 7] = Kleur.Wit;
+            spel.bord[3, 0] = Kleur.Wit;
+            spel.bord[3, 1] = Kleur.Wit;
+            spel.bord[3, 2] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[3, 4] = Kleur.Wit;
+            spel.bord[3, 5] = Kleur.Wit;
+            spel.bord[3, 6] = Kleur.Wit;
+            spel.bord[3, 7] = Kleur.Geen;
+            spel.bord[4, 0] = Kleur.Wit;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Geen;
+            spel.bord[4, 7] = Kleur.Geen;
+            spel.bord[5, 0] = Kleur.Wit;
+            spel.bord[5, 1] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[5, 4] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[5, 6] = Kleur.Geen;
+            spel.bord[5, 7] = Kleur.Zwart;
+            spel.bord[6, 0] = Kleur.Wit;
+            spel.bord[6, 1] = Kleur.Wit;
+            spel.bord[6, 2] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[6, 4] = Kleur.Wit;
+            spel.bord[6, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
+            spel.bord[6, 7] = Kleur.Geen;
+            spel.bord[7, 0] = Kleur.Wit;
+            spel.bord[7, 1] = Kleur.Wit;
+            spel.bord[7, 2] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Wit;
+            spel.bord[7, 4] = Kleur.Wit;
+            spel.bord[7, 5] = Kleur.Wit;
+            spel.bord[7, 6] = Kleur.Wit;
+            spel.bord[7, 7] = Kleur.Wit;
 
             //     0 1 2 3 4 5 6 7
             //     v
@@ -1375,10 +1375,10 @@ namespace NUnitTestProjectReversiSpel
             // 6   1 1 1 1 1 1 1 0
             // 7   1 1 1 1 1 1 1 1
             // Act
-            spel.AandeBeurt = Kleur.Zwart;
+            spel.aandeBeurt = Kleur.Zwart;
             spel.Pas();
             // Assert
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.AreEqual(Kleur.Wit, spel.aandeBeurt);
         }
 
         [Test]
@@ -1386,70 +1386,70 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange  (zowel wit als zwart kunnen niet meer)
             Spel spel = new Spel();
-            spel.Bord[0, 0] = Kleur.Wit;
-            spel.Bord[0, 1] = Kleur.Wit;
-            spel.Bord[0, 2] = Kleur.Wit;
-            spel.Bord[0, 3] = Kleur.Wit;
-            spel.Bord[0, 4] = Kleur.Wit;
-            spel.Bord[0, 5] = Kleur.Wit;
-            spel.Bord[0, 6] = Kleur.Wit;
-            spel.Bord[0, 7] = Kleur.Wit;
-            spel.Bord[1, 0] = Kleur.Wit;
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[1, 2] = Kleur.Wit;
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[1, 4] = Kleur.Wit;
-            spel.Bord[1, 5] = Kleur.Wit;
-            spel.Bord[1, 6] = Kleur.Wit;
-            spel.Bord[1, 7] = Kleur.Wit;
-            spel.Bord[2, 0] = Kleur.Wit;
-            spel.Bord[2, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[2, 4] = Kleur.Wit;
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[2, 6] = Kleur.Wit;
-            spel.Bord[2, 7] = Kleur.Wit;
-            spel.Bord[3, 0] = Kleur.Wit;
-            spel.Bord[3, 1] = Kleur.Wit;
-            spel.Bord[3, 2] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[3, 4] = Kleur.Wit;
-            spel.Bord[3, 5] = Kleur.Wit;
-            spel.Bord[3, 6] = Kleur.Wit;
-            spel.Bord[3, 7] = Kleur.Geen;
-            spel.Bord[4, 0] = Kleur.Wit;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Geen;
-            spel.Bord[4, 7] = Kleur.Geen;
-            spel.Bord[5, 0] = Kleur.Wit;
-            spel.Bord[5, 1] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[5, 4] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[5, 6] = Kleur.Geen;
-            spel.Bord[5, 7] = Kleur.Zwart;
-            spel.Bord[6, 0] = Kleur.Wit;
-            spel.Bord[6, 1] = Kleur.Wit;
-            spel.Bord[6, 2] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[6, 4] = Kleur.Wit;
-            spel.Bord[6, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
-            spel.Bord[6, 7] = Kleur.Geen;
-            spel.Bord[7, 0] = Kleur.Wit;
-            spel.Bord[7, 1] = Kleur.Wit;
-            spel.Bord[7, 2] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Wit;
-            spel.Bord[7, 4] = Kleur.Wit;
-            spel.Bord[7, 5] = Kleur.Wit;
-            spel.Bord[7, 6] = Kleur.Wit;
-            spel.Bord[7, 7] = Kleur.Wit;
+            spel.bord[0, 0] = Kleur.Wit;
+            spel.bord[0, 1] = Kleur.Wit;
+            spel.bord[0, 2] = Kleur.Wit;
+            spel.bord[0, 3] = Kleur.Wit;
+            spel.bord[0, 4] = Kleur.Wit;
+            spel.bord[0, 5] = Kleur.Wit;
+            spel.bord[0, 6] = Kleur.Wit;
+            spel.bord[0, 7] = Kleur.Wit;
+            spel.bord[1, 0] = Kleur.Wit;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[1, 2] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[1, 4] = Kleur.Wit;
+            spel.bord[1, 5] = Kleur.Wit;
+            spel.bord[1, 6] = Kleur.Wit;
+            spel.bord[1, 7] = Kleur.Wit;
+            spel.bord[2, 0] = Kleur.Wit;
+            spel.bord[2, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[2, 4] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[2, 6] = Kleur.Wit;
+            spel.bord[2, 7] = Kleur.Wit;
+            spel.bord[3, 0] = Kleur.Wit;
+            spel.bord[3, 1] = Kleur.Wit;
+            spel.bord[3, 2] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[3, 4] = Kleur.Wit;
+            spel.bord[3, 5] = Kleur.Wit;
+            spel.bord[3, 6] = Kleur.Wit;
+            spel.bord[3, 7] = Kleur.Geen;
+            spel.bord[4, 0] = Kleur.Wit;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Geen;
+            spel.bord[4, 7] = Kleur.Geen;
+            spel.bord[5, 0] = Kleur.Wit;
+            spel.bord[5, 1] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[5, 4] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[5, 6] = Kleur.Geen;
+            spel.bord[5, 7] = Kleur.Zwart;
+            spel.bord[6, 0] = Kleur.Wit;
+            spel.bord[6, 1] = Kleur.Wit;
+            spel.bord[6, 2] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[6, 4] = Kleur.Wit;
+            spel.bord[6, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
+            spel.bord[6, 7] = Kleur.Geen;
+            spel.bord[7, 0] = Kleur.Wit;
+            spel.bord[7, 1] = Kleur.Wit;
+            spel.bord[7, 2] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Wit;
+            spel.bord[7, 4] = Kleur.Wit;
+            spel.bord[7, 5] = Kleur.Wit;
+            spel.bord[7, 6] = Kleur.Wit;
+            spel.bord[7, 7] = Kleur.Wit;
 
             //     0 1 2 3 4 5 6 7
             //     v
@@ -1462,10 +1462,10 @@ namespace NUnitTestProjectReversiSpel
             // 6   1 1 1 1 1 1 1 0
             // 7   1 1 1 1 1 1 1 1
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             spel.Pas();
             // Assert
-            Assert.AreEqual(Kleur.Zwart, spel.AandeBeurt);
+            Assert.AreEqual(Kleur.Zwart, spel.aandeBeurt);
         }
 
         [Test]
@@ -1473,70 +1473,70 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange  (zowel wit als zwart kunnen niet meer)
             Spel spel = new Spel();
-            spel.Bord[0, 0] = Kleur.Wit;
-            spel.Bord[0, 1] = Kleur.Wit;
-            spel.Bord[0, 2] = Kleur.Wit;
-            spel.Bord[0, 3] = Kleur.Wit;
-            spel.Bord[0, 4] = Kleur.Wit;
-            spel.Bord[0, 5] = Kleur.Wit;
-            spel.Bord[0, 6] = Kleur.Wit;
-            spel.Bord[0, 7] = Kleur.Wit;
-            spel.Bord[1, 0] = Kleur.Wit;
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[1, 2] = Kleur.Wit;
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[1, 4] = Kleur.Wit;
-            spel.Bord[1, 5] = Kleur.Wit;
-            spel.Bord[1, 6] = Kleur.Wit;
-            spel.Bord[1, 7] = Kleur.Wit;
-            spel.Bord[2, 0] = Kleur.Wit;
-            spel.Bord[2, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[2, 4] = Kleur.Wit;
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[2, 6] = Kleur.Wit;
-            spel.Bord[2, 7] = Kleur.Wit;
-            spel.Bord[3, 0] = Kleur.Wit;
-            spel.Bord[3, 1] = Kleur.Wit;
-            spel.Bord[3, 2] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[3, 4] = Kleur.Wit;
-            spel.Bord[3, 5] = Kleur.Wit;
-            spel.Bord[3, 6] = Kleur.Wit;
-            spel.Bord[3, 7] = Kleur.Geen;
-            spel.Bord[4, 0] = Kleur.Wit;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Geen;
-            spel.Bord[4, 7] = Kleur.Geen;
-            spel.Bord[5, 0] = Kleur.Wit;
-            spel.Bord[5, 1] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[5, 4] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[5, 6] = Kleur.Geen;
-            spel.Bord[5, 7] = Kleur.Zwart;
-            spel.Bord[6, 0] = Kleur.Wit;
-            spel.Bord[6, 1] = Kleur.Wit;
-            spel.Bord[6, 2] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[6, 4] = Kleur.Wit;
-            spel.Bord[6, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
-            spel.Bord[6, 7] = Kleur.Geen;
-            spel.Bord[7, 0] = Kleur.Wit;
-            spel.Bord[7, 1] = Kleur.Wit;
-            spel.Bord[7, 2] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Wit;
-            spel.Bord[7, 4] = Kleur.Wit;
-            spel.Bord[7, 5] = Kleur.Wit;
-            spel.Bord[7, 6] = Kleur.Wit;
-            spel.Bord[7, 7] = Kleur.Wit;
+            spel.bord[0, 0] = Kleur.Wit;
+            spel.bord[0, 1] = Kleur.Wit;
+            spel.bord[0, 2] = Kleur.Wit;
+            spel.bord[0, 3] = Kleur.Wit;
+            spel.bord[0, 4] = Kleur.Wit;
+            spel.bord[0, 5] = Kleur.Wit;
+            spel.bord[0, 6] = Kleur.Wit;
+            spel.bord[0, 7] = Kleur.Wit;
+            spel.bord[1, 0] = Kleur.Wit;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[1, 2] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[1, 4] = Kleur.Wit;
+            spel.bord[1, 5] = Kleur.Wit;
+            spel.bord[1, 6] = Kleur.Wit;
+            spel.bord[1, 7] = Kleur.Wit;
+            spel.bord[2, 0] = Kleur.Wit;
+            spel.bord[2, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[2, 4] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[2, 6] = Kleur.Wit;
+            spel.bord[2, 7] = Kleur.Wit;
+            spel.bord[3, 0] = Kleur.Wit;
+            spel.bord[3, 1] = Kleur.Wit;
+            spel.bord[3, 2] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[3, 4] = Kleur.Wit;
+            spel.bord[3, 5] = Kleur.Wit;
+            spel.bord[3, 6] = Kleur.Wit;
+            spel.bord[3, 7] = Kleur.Geen;
+            spel.bord[4, 0] = Kleur.Wit;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Geen;
+            spel.bord[4, 7] = Kleur.Geen;
+            spel.bord[5, 0] = Kleur.Wit;
+            spel.bord[5, 1] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[5, 4] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[5, 6] = Kleur.Geen;
+            spel.bord[5, 7] = Kleur.Zwart;
+            spel.bord[6, 0] = Kleur.Wit;
+            spel.bord[6, 1] = Kleur.Wit;
+            spel.bord[6, 2] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[6, 4] = Kleur.Wit;
+            spel.bord[6, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
+            spel.bord[6, 7] = Kleur.Geen;
+            spel.bord[7, 0] = Kleur.Wit;
+            spel.bord[7, 1] = Kleur.Wit;
+            spel.bord[7, 2] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Wit;
+            spel.bord[7, 4] = Kleur.Wit;
+            spel.bord[7, 5] = Kleur.Wit;
+            spel.bord[7, 6] = Kleur.Wit;
+            spel.bord[7, 7] = Kleur.Wit;
 
             //     0 1 2 3 4 5 6 7
             //     v
@@ -1549,7 +1549,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   1 1 1 1 1 1 1 0
             // 7   1 1 1 1 1 1 1 1
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.Afgelopen();
             // Assert
             Assert.IsTrue(actual);
@@ -1560,70 +1560,70 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange  (zowel wit als zwart kunnen niet meer)
             Spel spel = new Spel();
-            spel.Bord[0, 0] = Kleur.Wit;
-            spel.Bord[0, 1] = Kleur.Wit;
-            spel.Bord[0, 2] = Kleur.Wit;
-            spel.Bord[0, 3] = Kleur.Wit;
-            spel.Bord[0, 4] = Kleur.Wit;
-            spel.Bord[0, 5] = Kleur.Wit;
-            spel.Bord[0, 6] = Kleur.Wit;
-            spel.Bord[0, 7] = Kleur.Wit;
-            spel.Bord[1, 0] = Kleur.Wit;
-            spel.Bord[1, 1] = Kleur.Wit;
-            spel.Bord[1, 2] = Kleur.Wit;
-            spel.Bord[1, 3] = Kleur.Wit;
-            spel.Bord[1, 4] = Kleur.Wit;
-            spel.Bord[1, 5] = Kleur.Wit;
-            spel.Bord[1, 6] = Kleur.Wit;
-            spel.Bord[1, 7] = Kleur.Wit;
-            spel.Bord[2, 0] = Kleur.Wit;
-            spel.Bord[2, 1] = Kleur.Wit;
-            spel.Bord[2, 2] = Kleur.Wit;
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[2, 4] = Kleur.Wit;
-            spel.Bord[2, 5] = Kleur.Wit;
-            spel.Bord[2, 6] = Kleur.Wit;
-            spel.Bord[2, 7] = Kleur.Wit;
-            spel.Bord[3, 0] = Kleur.Wit;
-            spel.Bord[3, 1] = Kleur.Wit;
-            spel.Bord[3, 2] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[3, 4] = Kleur.Wit;
-            spel.Bord[3, 5] = Kleur.Wit;
-            spel.Bord[3, 6] = Kleur.Wit;
-            spel.Bord[3, 7] = Kleur.Wit;
-            spel.Bord[4, 0] = Kleur.Wit;
-            spel.Bord[4, 1] = Kleur.Wit;
-            spel.Bord[4, 2] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Wit;
-            spel.Bord[4, 5] = Kleur.Wit;
-            spel.Bord[4, 6] = Kleur.Zwart;
-            spel.Bord[4, 7] = Kleur.Zwart;
-            spel.Bord[5, 0] = Kleur.Wit;
-            spel.Bord[5, 1] = Kleur.Wit;
-            spel.Bord[5, 2] = Kleur.Wit;
-            spel.Bord[5, 3] = Kleur.Wit;
-            spel.Bord[5, 4] = Kleur.Wit;
-            spel.Bord[5, 5] = Kleur.Wit;
-            spel.Bord[5, 6] = Kleur.Zwart;
-            spel.Bord[5, 7] = Kleur.Zwart;
-            spel.Bord[6, 0] = Kleur.Wit;
-            spel.Bord[6, 1] = Kleur.Wit;
-            spel.Bord[6, 2] = Kleur.Wit;
-            spel.Bord[6, 3] = Kleur.Wit;
-            spel.Bord[6, 4] = Kleur.Wit;
-            spel.Bord[6, 5] = Kleur.Wit;
-            spel.Bord[6, 6] = Kleur.Wit;
-            spel.Bord[6, 7] = Kleur.Zwart;
-            spel.Bord[7, 0] = Kleur.Wit;
-            spel.Bord[7, 1] = Kleur.Wit;
-            spel.Bord[7, 2] = Kleur.Wit;
-            spel.Bord[7, 3] = Kleur.Wit;
-            spel.Bord[7, 4] = Kleur.Wit;
-            spel.Bord[7, 5] = Kleur.Wit;
-            spel.Bord[7, 6] = Kleur.Wit;
-            spel.Bord[7, 7] = Kleur.Wit;
+            spel.bord[0, 0] = Kleur.Wit;
+            spel.bord[0, 1] = Kleur.Wit;
+            spel.bord[0, 2] = Kleur.Wit;
+            spel.bord[0, 3] = Kleur.Wit;
+            spel.bord[0, 4] = Kleur.Wit;
+            spel.bord[0, 5] = Kleur.Wit;
+            spel.bord[0, 6] = Kleur.Wit;
+            spel.bord[0, 7] = Kleur.Wit;
+            spel.bord[1, 0] = Kleur.Wit;
+            spel.bord[1, 1] = Kleur.Wit;
+            spel.bord[1, 2] = Kleur.Wit;
+            spel.bord[1, 3] = Kleur.Wit;
+            spel.bord[1, 4] = Kleur.Wit;
+            spel.bord[1, 5] = Kleur.Wit;
+            spel.bord[1, 6] = Kleur.Wit;
+            spel.bord[1, 7] = Kleur.Wit;
+            spel.bord[2, 0] = Kleur.Wit;
+            spel.bord[2, 1] = Kleur.Wit;
+            spel.bord[2, 2] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[2, 4] = Kleur.Wit;
+            spel.bord[2, 5] = Kleur.Wit;
+            spel.bord[2, 6] = Kleur.Wit;
+            spel.bord[2, 7] = Kleur.Wit;
+            spel.bord[3, 0] = Kleur.Wit;
+            spel.bord[3, 1] = Kleur.Wit;
+            spel.bord[3, 2] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[3, 4] = Kleur.Wit;
+            spel.bord[3, 5] = Kleur.Wit;
+            spel.bord[3, 6] = Kleur.Wit;
+            spel.bord[3, 7] = Kleur.Wit;
+            spel.bord[4, 0] = Kleur.Wit;
+            spel.bord[4, 1] = Kleur.Wit;
+            spel.bord[4, 2] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Wit;
+            spel.bord[4, 5] = Kleur.Wit;
+            spel.bord[4, 6] = Kleur.Zwart;
+            spel.bord[4, 7] = Kleur.Zwart;
+            spel.bord[5, 0] = Kleur.Wit;
+            spel.bord[5, 1] = Kleur.Wit;
+            spel.bord[5, 2] = Kleur.Wit;
+            spel.bord[5, 3] = Kleur.Wit;
+            spel.bord[5, 4] = Kleur.Wit;
+            spel.bord[5, 5] = Kleur.Wit;
+            spel.bord[5, 6] = Kleur.Zwart;
+            spel.bord[5, 7] = Kleur.Zwart;
+            spel.bord[6, 0] = Kleur.Wit;
+            spel.bord[6, 1] = Kleur.Wit;
+            spel.bord[6, 2] = Kleur.Wit;
+            spel.bord[6, 3] = Kleur.Wit;
+            spel.bord[6, 4] = Kleur.Wit;
+            spel.bord[6, 5] = Kleur.Wit;
+            spel.bord[6, 6] = Kleur.Wit;
+            spel.bord[6, 7] = Kleur.Zwart;
+            spel.bord[7, 0] = Kleur.Wit;
+            spel.bord[7, 1] = Kleur.Wit;
+            spel.bord[7, 2] = Kleur.Wit;
+            spel.bord[7, 3] = Kleur.Wit;
+            spel.bord[7, 4] = Kleur.Wit;
+            spel.bord[7, 5] = Kleur.Wit;
+            spel.bord[7, 6] = Kleur.Wit;
+            spel.bord[7, 7] = Kleur.Wit;
 
             //     0 1 2 3 4 5 6 7
             //     v
@@ -1636,7 +1636,7 @@ namespace NUnitTestProjectReversiSpel
             // 6   1 1 1 1 1 1 1 2
             // 7   1 1 1 1 1 1 1 1
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.Afgelopen();
             // Assert
             Assert.IsTrue(actual);
@@ -1659,7 +1659,7 @@ namespace NUnitTestProjectReversiSpel
             // 7   0 0 0 0 0 0 0 0
             //                     
             // Act
-            spel.AandeBeurt = Kleur.Wit;
+            spel.aandeBeurt = Kleur.Wit;
             var actual = spel.Afgelopen();
             // Assert
             Assert.IsFalse(actual);
@@ -1694,11 +1694,11 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 3] = Kleur.Zwart;
-            spel.Bord[3, 3] = Kleur.Zwart;
-            spel.Bord[4, 3] = Kleur.Zwart;
-            spel.Bord[3, 4] = Kleur.Zwart;
-            spel.Bord[4, 4] = Kleur.Wit;
+            spel.bord[2, 3] = Kleur.Zwart;
+            spel.bord[3, 3] = Kleur.Zwart;
+            spel.bord[4, 3] = Kleur.Zwart;
+            spel.bord[3, 4] = Kleur.Zwart;
+            spel.bord[4, 4] = Kleur.Wit;
 
             //     0 1 2 3 4 5 6 7
             //                     
@@ -1722,11 +1722,11 @@ namespace NUnitTestProjectReversiSpel
         {
             // Arrange
             Spel spel = new Spel();
-            spel.Bord[2, 3] = Kleur.Wit;
-            spel.Bord[3, 3] = Kleur.Wit;
-            spel.Bord[4, 3] = Kleur.Wit;
-            spel.Bord[3, 4] = Kleur.Wit;
-            spel.Bord[4, 4] = Kleur.Zwart;
+            spel.bord[2, 3] = Kleur.Wit;
+            spel.bord[3, 3] = Kleur.Wit;
+            spel.bord[4, 3] = Kleur.Wit;
+            spel.bord[3, 4] = Kleur.Wit;
+            spel.bord[4, 4] = Kleur.Zwart;
 
 
             //     0 1 2 3 4 5 6 7

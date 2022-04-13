@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Converters;
+using ReversiRestApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,9 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ReversieISpelImplementatie.Model
+namespace ReversiRestApi.Model
 {
-    public class Spel : ISpel
+    public class Spel : ISpel , ISpelData, IBord
     {
         public int bordOmvang = 8;
         public readonly int[,] richting = new int[8, 2] {
@@ -29,40 +30,60 @@ namespace ReversieISpelImplementatie.Model
 
 
         private Kleur[,] bord;
-
-        public Kleur[,] Bord {
-            get {
-
-
-                return bord;
+        public string[] Bord 
+        { set 
+            {
+                int i = 0;
+                foreach(string k in value) {
+                    
+                    bord[(i / bordOmvang),(i % bordOmvang)] = (Kleur)Enum.Parse(new Kleur().GetType(), k); 
+                    i++;
+                }
             }
-            set {
-                bord = value;
-            }
+            get
+            {
+                string[] s = new string[(bordOmvang * bordOmvang)];
+                int i = 0;
+                foreach (Kleur k in bord) {
 
+                    s[i] = k.ToString();
+                    i++;
+                }
+                return s;
+            }
         }
 
 
-        public Kleur AandeBeurt { get; set; }
+
+        private Kleur aandeBeurt { get; set; }
+        
+        public string AandeBeurt 
+        { 
+            set { aandeBeurt = (Kleur)Enum.Parse(new Kleur().GetType(), value); }
+            get { return aandeBeurt.ToString(); } 
+        }
+
+
         public Spel()
         {
+            
             Token = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
             Token = Token.Replace("/", "q");    // slash mijden ivm het opvragen van een spel via een api obv het token
             Token = Token.Replace("+", "r");    // plus mijden ivm het opvragen van een spel via een api obv het token
 
-            Bord = new Kleur[bordOmvang, bordOmvang];
-            Bord[3, 3] = Kleur.Wit;
-            Bord[4, 4] = Kleur.Wit;
-            Bord[3, 4] = Kleur.Zwart;
-            Bord[4, 3] = Kleur.Zwart;
+            bord = new Kleur[bordOmvang, bordOmvang];
+            bord[3, 3] = Kleur.Wit;
+            bord[4, 4] = Kleur.Wit;
+            bord[3, 4] = Kleur.Zwart;
+            bord[4, 3] = Kleur.Zwart;
 
-            AandeBeurt = Kleur.Geen;
+            aandeBeurt = Kleur.Geen;
         }
 
         public void Pas()
         {
             // controleeer of er geen zet mogelijk is voor de speler die wil passen, alvorens van beurt te wisselen.
-            if (IsErEenZetMogelijk(AandeBeurt))
+            if (IsErEenZetMogelijk(aandeBeurt))
                 throw new Exception("Passen mag niet, er is nog een zet mogelijk");
             else
                 WisselBeurt();
@@ -72,7 +93,7 @@ namespace ReversieISpelImplementatie.Model
         public bool Afgelopen()     // return true als geen van de spelers een zet kan doen
         {
             //throw new NotImplementedException();    // todo!
-            if (!IsErEenZetMogelijk(AandeBeurt) && !IsErEenZetMogelijk(GetKleurTegenstander(AandeBeurt))) { return true; }
+            if (!IsErEenZetMogelijk(aandeBeurt) && !IsErEenZetMogelijk(GetKleurTegenstander(aandeBeurt))) { return true; }
             return false;
 
         }
@@ -102,11 +123,25 @@ namespace ReversieISpelImplementatie.Model
         {
             if (!PositieBinnenBordGrenzen(rijZet, kolomZet))
                 throw new Exception($"Zet ({rijZet},{kolomZet}) ligt buiten het bord!");
-            return ZetMogelijk(rijZet, kolomZet, AandeBeurt);
+            return ZetMogelijk(rijZet, kolomZet, aandeBeurt);
         }
 
-        public void DoeZet(int rijZet, int kolomZet)
+        public void DoeZet(int rijZet, int kolomZet,string speler)
         {
+            switch (aandeBeurt) {
+                case Kleur.Wit:
+                    if (Speler1Token == speler) { DoeZet(rijZet, kolomZet); } else { throw new Exception($"Deze speler is niet aan de beurt"); }
+                    break;
+                case Kleur.Zwart:
+                    if (Speler2Token == speler) { DoeZet(rijZet, kolomZet); } else { throw new Exception($"Deze speler is niet aan de beurt"); }
+                    break;
+                    
+
+            }
+            
+        }
+
+        public void DoeZet(int rijZet, int kolomZet) {
             //throw new NotImplementedException();    // todo: maak hierbij gebruik van de reeds in deze klassen opgenomen methoden!
             if (ZetMogelijk(rijZet, kolomZet))
             {
@@ -116,18 +151,21 @@ namespace ReversieISpelImplementatie.Model
                     for (int i = 0; i < 8; i++)
                     {
 
-                        DraaiStenenVanTegenstanderInOpgegevenRichtingOmIndienIngesloten(rijZet, kolomZet, AandeBeurt, richting[i, 0], richting[i, 1]);
-                        
+                        DraaiStenenVanTegenstanderInOpgegevenRichtingOmIndienIngesloten(rijZet, kolomZet, aandeBeurt, richting[i, 0], richting[i, 1]);
+
 
                     }
-                    Bord[rijZet, kolomZet] = AandeBeurt;
+                    bord[rijZet, kolomZet] = aandeBeurt;
                     WisselBeurt();
 
                 }
             }
-            else {
+            else
+            {
                 throw new Exception($"Zet ({rijZet},{kolomZet}) is niet mogelijk!");
             }
+
+
         }
 
         private static Kleur GetKleurTegenstander(Kleur kleur)
@@ -175,10 +213,10 @@ namespace ReversieISpelImplementatie.Model
 
         private void WisselBeurt()
         {
-            if (AandeBeurt == Kleur.Wit)
-                AandeBeurt = Kleur.Zwart;
+            if (aandeBeurt == Kleur.Wit)
+                aandeBeurt = Kleur.Zwart;
             else
-                AandeBeurt = Kleur.Wit;
+                aandeBeurt = Kleur.Wit;
         }
 
         private bool PositieBinnenBordGrenzen(int rij, int kolom)
@@ -190,7 +228,7 @@ namespace ReversieISpelImplementatie.Model
         private bool ZetOpBordEnNogVrij(int rijZet, int kolomZet)
         {
             // Als op het bord gezet wordt, en veld nog vrij, dan return true, anders false
-            return (PositieBinnenBordGrenzen(rijZet, kolomZet) && Bord[rijZet, kolomZet] == Kleur.Geen);
+            return (PositieBinnenBordGrenzen(rijZet, kolomZet) && bord[rijZet, kolomZet] == Kleur.Geen);
         }
 
         private bool StenenInTeSluitenInOpgegevenRichting(int rijZet, int kolomZet,
@@ -207,12 +245,12 @@ namespace ReversieISpelImplementatie.Model
             kolom = kolomZet + kolomRichting;
 
             int aantalNaastGelegenStenenVanTegenstander = 0;
-            // Zolang Bord[rij,kolom] niet buiten de bordgrenzen ligt, en je in het volgende vakje 
+            // Zolang bord[rij,kolom] niet buiten de bordgrenzen ligt, en je in het volgende vakje 
             // steeds de kleur van de tegenstander treft, ga je nog een vakje verder kijken.
-            // Bord[rij, kolom] ligt uiteindelijk buiten de bordgrenzen, of heeft niet meer de
+            // bord[rij, kolom] ligt uiteindelijk buiten de bordgrenzen, of heeft niet meer de
             // de kleur van de tegenstander.
             // N.b.: deel achter && wordt alleen uitgevoerd als conditie daarvoor true is.
-            while (PositieBinnenBordGrenzen(rij, kolom) && Bord[rij, kolom] == kleurTegenstander)
+            while (PositieBinnenBordGrenzen(rij, kolom) && bord[rij, kolom] == kleurTegenstander)
             {
                 rij += rijRichting;
                 kolom += kolomRichting;
@@ -223,7 +261,7 @@ namespace ReversieISpelImplementatie.Model
             // als alle drie onderstaande condities waar zijn, zijn er in de
             // opgegeven richting stenen in te sluiten.
             return (PositieBinnenBordGrenzen(rij, kolom) &&
-                    Bord[rij, kolom] == kleurZetter &&
+                    bord[rij, kolom] == kleurZetter &&
                     aantalNaastGelegenStenenVanTegenstander > 0);
         }
 
@@ -243,9 +281,9 @@ namespace ReversieISpelImplementatie.Model
                 // N.b.: je weet zeker dat je niet buiten het bord belandt,
                 // omdat de stenen van de tegenstander ingesloten zijn door
                 // een steen van degene die de zet doet.
-                while (Bord[rij, kolom] == kleurTegenstander)
+                while (bord[rij, kolom] == kleurTegenstander)
                 {
-                    Bord[rij, kolom] = kleurZetter;
+                    bord[rij, kolom] = kleurZetter;
                     rij += rijRichting;
                     kolom += kolomRichting;
                 }

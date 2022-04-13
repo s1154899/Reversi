@@ -20,7 +20,12 @@
       "ProjectGuid": "e8deac23-058a-4d28-be1e-1d0d2e63b66d",
       "DisplayName": "NUnitTestReversiApi",
       "ColorIndex": 2
+    },
+    "5b31c47c-1fb5-4261-bd9e-da9e33165e89": {
+      "ProjectGuid": "5b31c47c-1fb5-4261-bd9e-da9e33165e89",
+      "DisplayName": "ReversiMvcApp",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    
+*@
+@{
+}
+    <link rel="stylesheet" href="~/css/scss/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="~/js/board.js"></script>
+
+<div id="after-game-container">
+    <div id="board-after-game" class="">
+
+    </div>
+
+    <h1 id="gewonnen-header-1"><b id="gewonnen-bold">@ViewData["header"]</b></h1>
+    <p id="speler1-naam">@ViewData["speler1naam"]</p><p id="speler1-stand">@ViewData["speler1stand"]</p>
+    <p id="speler2-naam">@ViewData["speler2naam"]</p><p id="speler2-stand">@ViewData["speler2stand"]</p>
+
+    <button id="return-button" class="button return">return to find game</button>
+</div>
+<script>
+    function start() {
+        var b = document.getElementById("board-after-game");
+        b.append(board.create(8, 8));
+    }
+    start();
+</script>

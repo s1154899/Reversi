@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07519f0e-a67d-4a82-8ed0-6d3c96deb569" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clientOefenTaken/AJAXTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientOefenTaken/JSPromises.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientReversi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientReversi/js/Game.Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientReversi/js/Game.Model.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientReversi/js/Game.Model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -41,6 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -62,6 +59,8 @@
       <workItem from="1644933796097" duration="3451000" />
       <workItem from="1646913408204" duration="3649000" />
       <workItem from="1646925702317" duration="978000" />
+      <workItem from="1648028717008" duration="9554000" />
+      <workItem from="1648128868882" duration="1987000" />
     </task>
     <servers />
   </component>
@@ -77,9 +76,9 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="162" key="SettingsEditor/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1644916958863" />
-    <state x="839" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1646925712900">
+    <state x="839" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1648128898161">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="839" y="329" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1646925712900" />
+    <state x="839" y="329" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/-1680.26.1680.1010@0.0.2560.1040" timestamp="1648128898161" />
   </component>
 </project>

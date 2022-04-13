@@ -1,4 +1,4 @@
-﻿using ReversieISpelImplementatie.Model;
+﻿using ReversiRestApi.Model;
 
 namespace ReversiRestApi.Model
 {
@@ -6,9 +6,14 @@ namespace ReversiRestApi.Model
     {
         void AddSpel(Spel spel);
 
+        void RemoveSpel(string spelToken);
+        void UpdateSpel(string spelToken, Spel spel);
+
         public List<Spel> GetSpellen();
 
         Spel GetSpel(string spelToken);
+
+
 
         // ...
     }

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ReversiMvcApp.Models.Spelers>
+
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Index">all users</a>
+</p>
+<p>
+    <a asp-action="DisplayModerators">all moderators</a>
+</p>
+<p>
+    <a asp-action="DisplayAdmin">all admins</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Guid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+           
+            <td>
+                <a asp-action="AddUserToAdmin" asp-route-id="@item.Guid">Add Admin</a> |
+                <a asp-action="AddUserToModerator" asp-route-id="@item.Guid">Add Moderator</a> |
+                <a asp-action="RemoveUserFromAdmin" asp-route-id="@item.Guid">Remove Admin</a> |
+                <a asp-action="RemoveUserFromModerator" asp-route-id="@item.Guid">Remove Moderator</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
