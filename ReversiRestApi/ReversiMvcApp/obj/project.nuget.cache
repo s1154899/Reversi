@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9US1ydLT4HNIUL1IO1zV7wr2G8wz/KFRHSz84SVoRMCsVZYeu2VPdNV/XXjiJivKXbUAU9ceIVLqvo2AdVEEVw==",
+  "dgSpecHash": "F3a18xT8hCMNGIbo5ssnTEM6P+MBY6aPHAQFKXfB1OWIgi9KfROcHrPv+OHKnvPM50AAbCSmvp9moEeXFCDsdQ==",
   "success": true,
   "projectFilePath": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\ReversiMvcApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\edmar\\.nuget\\packages\\aspnetcore.recaptcha\\1.5.3\\aspnetcore.recaptcha.1.5.3.nupkg.sha512",
     "C:\\Users\\edmar\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\edmar\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\edmar\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
