@@ -2,28 +2,10 @@
 
 
 var FeedbackWidget = (function(){
-    var _elementId;
 
-    function SetElementId(elementId){
-        _elementId = elementId;
-        init();
-    }
-
-    function init(){
-
-        var Element = document.getElementById(_elementId);
-        var Buttons = Element.getElementsByTagName("button");
-
-
-        for(var i = 0; i < Buttons.length; i++) {
-            Buttons[i].addEventListener( "click",function(){hide(_elementId);});
-        }
-
-    }
-
-    function show(type,message){
+    function show(elementId,type,message){
         LocalLogging.log("feedback_widget",type,message);
-        var container = document.getElementById(_elementId);
+        var container = document.getElementById(elementId);
         switch (type) {
             case "succes":
                 container.className = "alert alert-success fade-in";
@@ -35,12 +17,12 @@ var FeedbackWidget = (function(){
 
         container.getElementsByTagName("p")[0].innerText = message;
         if (container.style.display != "block"){
-            toggleFeedback(_elementId);
+            toggleFeedback(elementId);
         }
     }
-    function hide(element){
-        if (document.getElementById(element).style.display != "none"){
-            toggleFeedback(element);
+    function hide(elementId){
+        if (document.getElementById(elementId).style.display != "none"){
+            toggleFeedback(elementId);
         }
     }
 
@@ -58,7 +40,6 @@ var FeedbackWidget = (function(){
     return {
         show : show,
         hide : hide,
-        SetElementId : SetElementId,
 
         log : function(){LocalLogging.log("feedback_widget");},
         removeLog : function(){LocalLogging.removeLog("feedback_widget");},

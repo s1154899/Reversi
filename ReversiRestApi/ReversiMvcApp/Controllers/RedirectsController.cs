@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReversiMvcApp.Models;
+using ReversiRestApi.Model;
 
 namespace ReversiMvcApp.Controllers
 {
@@ -19,8 +20,13 @@ namespace ReversiMvcApp.Controllers
         [Route("redirect/GetSpel/{spel}")]
         public IActionResult GetSpel( string spel)
         {
-            
-            return Ok(APIReversi.GetSpel(spel).Result);
+            try
+            {
+                return Ok(APIReversi.GetSpel(spel).Result);
+            }
+            catch (Exception ex) { 
+            return Ok(new Spel());
+            }
         }
 
         [Route("redirect/DoPas/{spel}/{speler}")]
@@ -28,6 +34,13 @@ namespace ReversiMvcApp.Controllers
         {
 
             return Ok(APIReversi.PostDoPas(spel,speler).Result);
+        }
+
+        [Route("redirect/Surrender/{spel}/{speler}")]
+        public IActionResult GetSurrender(string spel, string speler)
+        {
+
+            return Ok(APIReversi.PostSurrender(spel, speler).Result);
         }
 
 

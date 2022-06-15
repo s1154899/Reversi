@@ -133,6 +133,38 @@ namespace ReversiRestApi.Controllers
         return Ok(s);
         }
 
+        [Route("api/Spel/Surrender")]
+        [HttpPost]
+        public ActionResult<Spel> SurrenderSpel([FromHeader] string spelToken, [FromHeader] string speler)
+        {
+
+
+            Spel s = iRepository.GetSpel(spelToken);
+
+            
+            if ((s.AandeBeurt == "Zwart" && speler == s.Speler2Token) || (s.AandeBeurt == "Wit" && speler == s.Speler1Token)) {
+                string kleur;
+                if (s.Speler1Token == speler)
+                {
+                    kleur = Kleur.Wit.ToString();
+                }
+                else
+                {
+                    kleur = Kleur.Zwart.ToString();
+                }
+                string[] bord = new string[s.bordOmvang * s.bordOmvang];
+                for (int i = 0; i < (s.bordOmvang * s.bordOmvang); i++) {
+
+
+                    bord[i] = kleur;
+
+                }
+                s.Bord = bord;
+                iRepository.UpdateSpel(spelToken, s);
+                //iRepository.RemoveSpel(spelToken);
+            } 
+            return Ok(s);
+        }
 
         [Route("api/Spel/Pas")]
         [HttpPost]

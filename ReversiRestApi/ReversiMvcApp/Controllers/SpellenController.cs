@@ -66,7 +66,7 @@ namespace ReversiMvcApp.Controllers
         [HttpGet]
         public ActionResult Spel(string id) {
             Spel s = APIReversi.GetSpel(id).Result;
-            ViewData["speler1"] = _userManager.FindByIdAsync(s.Speler1Token).Result.Email;
+            ViewData["speler1"] = "Me";
             ViewData["speler2"] = _userManager.FindByIdAsync(s.Speler2Token).Result.Email;
             return View("spel", s);
         }
@@ -74,6 +74,9 @@ namespace ReversiMvcApp.Controllers
         [HttpGet]
         public ActionResult Join(string id) {
             ClaimsPrincipal currentUser = this.User;
+            Spel s = APIReversi.GetSpel(id).Result;
+            ViewData["speler1"] = _userManager.FindByIdAsync(s.Speler1Token).Result.Email;
+            ViewData["speler2"] = "Me";
             var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
             APIReversi.PostJoin(id,currentUserID).Wait();
             

@@ -6,8 +6,8 @@ namespace ReversiMvcApp.Models
 {
     public static class APIReversi
     {
-        public static string BaseUrl = "https://localhost:5001/";
-        //public static string BaseUrl = "https://localhost:7059/";
+        public static string BaseUrl = "http://localhost:5059/";
+//        public static string BaseUrl = "https://localhost:7059/";
         private static string _GetSpel = "/api/Spel/";
         private static string _PostCreateSpel = "/api/Spel/Create";
         private static string _PostJoinSpel = "/api/Spel/Join/";
@@ -18,6 +18,7 @@ namespace ReversiMvcApp.Models
         private static string _PostRemoveSPel = "api/Spel/Remove";
         private static string _PostDoPas = "api/Spel/Pas";
         private static string _GetIsAfgelopen = "api/Spel/afgelopen";
+        private static string _PostSurrender = "api/Spel/Surrender";
 
         private static HttpClient _client;
 
@@ -92,6 +93,23 @@ namespace ReversiMvcApp.Models
             HttpContent content = data;
 
             HttpResponseMessage response = await _client.PostAsync(_PostJoinSpel+Token, content);
+            _client.DefaultRequestHeaders.Clear();
+            return await response.Content.ReadAsStringAsync();
+
+        }
+
+        public static async Task<string> PostSurrender(string Token, string spelerToken)
+        {
+            _client.DefaultRequestHeaders.Clear();
+
+            _client.DefaultRequestHeaders.Add("spelToken", Token);
+            _client.DefaultRequestHeaders.Add("speler", spelerToken);
+
+            var data = new StringContent("");
+
+            HttpContent content = data;
+
+            HttpResponseMessage response = await _client.PostAsync(_PostSurrender, content);
             _client.DefaultRequestHeaders.Clear();
             return await response.Content.ReadAsStringAsync();
 

@@ -22,6 +22,8 @@ builder.Services.AddScoped<ISpelRepository, SpelRepositoryDB>();
 //builder.Services.AddControllers().AddNewtonsoftJson()
 builder.Services.AddDbContext<ReversiContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ReversiDatabase")));
 
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -38,7 +40,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors();
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

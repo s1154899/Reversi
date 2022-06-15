@@ -6,8 +6,8 @@
 
 @{
     string authorizedUsers = "";
-    
 
+    string token = LatestGame.GetLatestSpel().Token;
 
 
 }
@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ReversiMvcApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/animation.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/mobile.css" asp-append-version="true" />
+    
+
+    
 </head>
 <body>
     <header>
@@ -68,6 +74,43 @@
             </div>
         </nav>
     </header>
+
+    <div id="feedback" class="alert alert-success fade-in" role="alert" style="display: none;">
+        <div id="feedback-content" class="">
+            <button name="feedback-close" class="feedback-widget-close">X</button>
+            <p class="feedback-widget-text">woop :(</p>
+                <a asp-area="" asp-controller="Spellen" asp-action="Spel" asp-route-id="@token" class="feedback-widget-accept wiggle">
+                    <button id="feedback-accept" name="feedback-accept" >Accept</button>
+                </a>
+            <button name="feedback-reject" class="feedback-widget-reject">Reject</button>
+        </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="~/js/LocalLogging.js"></script>
+    <script src="~/js/FeedbackWidget.js"></script>
+    <script>
+           $(function() {
+        console.log( "ready!" );
+    });
+
+    function notify(){
+    var x= $.ajax({
+            url:'https://' + location.host + '/redirect/GetSpel/@token',
+            
+
+            }).done(function(){
+            console.log(x.responseJSON);
+            if(x.responseJSON.speler2Token != null){  
+                FeedbackWidget.show("feedback","succes","Join game");
+            }
+
+            setTimeout(notify,1000);
+        
+        });
+    }
+    notify();
+    //FeedbackWidget.show("succes","woop :(");
+    </script>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

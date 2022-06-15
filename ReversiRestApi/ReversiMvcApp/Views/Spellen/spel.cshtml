@@ -34,6 +34,7 @@
     aandebeurt : @Model.AandeBeurt
 </details>
 <button onclick="PasZet()">Pas Zet</button>
+<button onclick="Surrender()">geef op</button>
 <div id="board-playing" class="">
 
 </div>
@@ -103,7 +104,23 @@
     
     }
     
+        function Surrender(){
+     var x= $.ajax({
+            url:'https://' + location.host + '/redirect/Surrender/@Model.Token/@currentUserID/',
+            
+            //data: '@Model.Token'
+            }).done(function(){
+            console.log(x);
+            
+            console.log(x.responseJSON);
+            //board.flip( Math.floor((i / @Model.bordOmvang)) ,  Math.floor((i % @Model.bordOmvang)) ,x.responseJSON.bord[i]);
+            
+            
+      
+        });
     
+    
+    }
     
     function CheckIfFinished(){
     
@@ -123,7 +140,7 @@
             
             }else{
         
-        setTimeout(GetNewBord,10000);
+        setTimeout(CheckIfFinished,10000);
             }
         });
         }

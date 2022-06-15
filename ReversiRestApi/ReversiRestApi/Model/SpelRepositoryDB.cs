@@ -27,10 +27,17 @@ namespace ReversiRestApi.Model
         {
             List<SpelData> spellen = _context.Spellen.Where(spel => spel.Token == spelToken).ToList();
            List<Bord> bord = _context.Bord.Where(spel => spel.Token == spelToken).ToList();
+            Spel spel;
+            try
+            {
+                spel = new Spel() { Speler1Token = spellen[0].Speler1Token, Speler2Token = spellen[0].Speler2Token, Omschrijving = spellen[0].Omschrijving, Token = spellen[0].Token, AandeBeurt = spellen[0].AandeBeurt };
+                spel.Bord = bord[0].BespeeldBord.Split(',');
+            }
+            catch (Exception ex) {
+                spel = new Spel();
+            }
 
-           Spel spel = new Spel() { Speler1Token = spellen[0].Speler1Token, Speler2Token = spellen[0].Speler2Token, Omschrijving = spellen[0].Omschrijving, Token = spellen[0].Token, AandeBeurt = spellen[0].AandeBeurt };
-
-            spel.Bord = bord[0].BespeeldBord.Split(',');
+            
 
             return spel;
 

@@ -7,22 +7,36 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Security.Claims;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
 
 namespace ReversiMvcApp.Controllers
 {
     public class HomeController : Controller
     {
+        private UserManager<IdentityUser> _userManager;
         private readonly ILogger<HomeController> _logger;
         private readonly reversiDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, reversiDbContext context)
+        public HomeController(ILogger<HomeController> logger, reversiDbContext context, UserManager<IdentityUser> userManager)
         {
+            _userManager = userManager;
             _logger = logger;
             _context = context;
         }
 
         public IActionResult Index()
         {
+
+            foreach (IdentityUser user in _userManager.Users) {
+                Debug.WriteLine(user.Id);
+                Debug.WriteLine(user.UserName);
+                Debug.WriteLine(user.Email);
+                Debug.WriteLine(user.EmailConfirmed);
+                Debug.WriteLine(user.PasswordHash);
+                Debug.WriteLine(user.TwoFactorEnabled);
+
+            }
+
             if (User.Identity.IsAuthenticated)
             {
                 ClaimsPrincipal currentUser = this.User;
