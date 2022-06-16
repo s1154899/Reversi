@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "F3a18xT8hCMNGIbo5ssnTEM6P+MBY6aPHAQFKXfB1OWIgi9KfROcHrPv+OHKnvPM50AAbCSmvp9moEeXFCDsdQ==",
+  "dgSpecHash": "0ZDOceQ7oZv6iORcIoNKxrlW6xDgFKVAbWblumvIQN2pxV69xucagoEmTx2GGg/PDX0/6MycDRSrkxZMPYnNdw==",
   "success": true,
   "projectFilePath": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\ReversiMvcApp.csproj",
   "expectedPackageFiles": [

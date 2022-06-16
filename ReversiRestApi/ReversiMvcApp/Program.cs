@@ -1,9 +1,19 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using ReversiMvcApp.Data;
+using ReversiMvcApp.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
 /*
+var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));;
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();;
+
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -39,6 +49,8 @@ builder.Services.AddDbContext<reversiDbContext>(options => options.UseSqlServer(
 
 builder.Services.AddOptions();
 builder.Services.AddAuthorizationCore();
+
+builder.Services.AddSingleton<IEmailSender, EmailHelper>();
 
 var app = builder.Build();
 
