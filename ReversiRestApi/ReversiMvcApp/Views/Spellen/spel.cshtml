@@ -25,11 +25,18 @@
     
 
     </script>
+    <script src="~/js/API.js"></script>
     <script src="~/js/AJAXReversiApi.js">
 
     </script>
+    
 <div id="game-container">
 <h1>Game</h1>
+<h2>Game fact:</h2><h2 id="Api"></h2>
+<script>
+
+API.GetFactAsync().then(r => document.getElementById("Api").innerHTML = r)
+</script>
 <details>
     aandebeurt : @Model.AandeBeurt
 </details>
@@ -77,7 +84,7 @@
             
             }
 
-            setTimeout(GetNewBord,1000);
+            setTimeout(GetNewBord,500);
         
         });
     

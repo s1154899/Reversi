@@ -48,7 +48,8 @@ namespace ReversiRestApi.Model
             IEnumerable<ISpelData> spellen = _context.Spellen.ToList();
             List<Spel> spellenList = new List<Spel>();
             foreach (ISpelData spel in spellen) {
-                spellenList.Add(new Spel() { Speler1Token = spel.Speler1Token , Speler2Token = spel.Speler2Token ,Omschrijving = spel.Omschrijving, Token = spel.Token });
+                List<Bord> bord = _context.Bord.Where(spel => spel.Token == spel.Token).ToList();
+                spellenList.Add(new Spel() { Speler1Token = spel.Speler1Token , Speler2Token = spel.Speler2Token ,Omschrijving = spel.Omschrijving, Token = spel.Token, Bord = bord[0].BespeeldBord.Split(',') });
             }
             return (List<Spel>)spellenList;
 

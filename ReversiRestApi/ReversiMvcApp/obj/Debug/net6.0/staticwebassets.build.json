@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SLsTjl+T0mBtm6ksH+//Rq3g5wjvosOQ995mLsq2Fck=",
+  "Hash": "4ZfVKTNHYH9tGqJGsqB4icbpK2gP4lLaZxGHpWUTsys=",
   "Source": "ReversiMvcApp",
   "BasePath": "_content/ReversiMvcApp",
   "Mode": "Default",
@@ -1234,6 +1234,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\AJAXReversiApi.js"
+    },
+    {
+      "Identity": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\wwwroot\\js\\API.js",
+      "SourceId": "ReversiMvcApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\wwwroot\\",
+      "BasePath": "_content/ReversiMvcApp",
+      "RelativePath": "js/API.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\API.js"
     },
     {
       "Identity": "D:\\xampp2\\htdocs\\Reversi\\ReversiRestApi\\ReversiMvcApp\\wwwroot\\js\\board.js",

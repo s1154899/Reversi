@@ -1,0 +1,142 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@model IEnumerable<ReversiRestApi.Model.Spel>
+@inject UserManager<IdentityUser> userManager
+
+@{
+    ViewData["Title"] = "index";
+
+    ClaimsPrincipal currentUser = this.User;
+    var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
+    string dataset = "";
+    string backgroundcolors = "";
+    string bordercolors = "";
+    string labels = "";
+    int count = 0;
+    foreach (var item in Model)
+    {
+        if (count != 0)
+        {
+            dataset += ",";
+            backgroundcolors += ",";
+            bordercolors += ",";
+            labels += ",";
+        }
+
+        if (item.Bord.Where( s => s == "Zwart").ToArray().Length > item.Bord.Where( s => s == "Wit").ToArray().Length && currentUserID == item.Speler2Token )
+        {
+            dataset += item.Bord.Where(s => s == "Zwart").ToArray().Length.ToString();
+        } else
+        {
+            dataset += item.Bord.Where(s => s == "Wit").ToArray().Length.ToString();
+        }
+        backgroundcolors += "'rgba(255, 99, 132, 0.2)'";
+        bordercolors += "\'rgb(255, 99, 132)\'";
+        labels += count.ToString();
+
+        count++;
+
+    }
+
+}
+
+<h1>View</h1>
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+ @section Scripts{
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [@labels],
+        datasets: [{
+            label: 'points',
+            data: [@dataset],
+            backgroundColor: [
+                @Html.Raw(backgroundcolors)
+                
+            ],
+            borderColor: [
+                @Html.Raw(bordercolors)
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</Script>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Omschrijving)
+            </th>
+            <th>
+                player one
+            </th>
+            <th>
+                player two
+            </th>
+            <th>
+                white
+            </th>
+            <th>
+                Black
+            </th>
+            <th>
+                won
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+                <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Omschrijving)
+            </td>
+            <td>
+                
+                @Html.DisplayFor(modelItem => userManager.FindByIdAsync( item.Speler1Token).Result.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => userManager.FindByIdAsync(item.Speler2Token).Result.Email)
+            </td>
+            <td>
+                @{
+                var White = item.Bord.Where( s => s == "Wit").ToArray().Length.ToString();
+                }
+                @Html.DisplayFor(modelItem => White)
+            </td>
+            <td>
+                @{
+                var Black = item.Bord.Where( s => s == "Zwart").ToArray().Length.ToString();
+                }
+                @Html.DisplayFor(modelItem => Black)
+            </td>
+            <td>
+                @{
+
+                var win = (item.Bord.Where( s => s == "Zwart").ToArray().Length > item.Bord.Where( s => s == "Wit").ToArray().Length && currentUserID == item.Speler2Token ) || (item.Bord.Where( s => s == "Zwart").ToArray().Length < item.Bord.Where( s => s == "Wit").ToArray().Length && ViewData["current"] == item.Speler1Token );
+                }
+
+                @Html.DisplayFor(modelItem => win)
+
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

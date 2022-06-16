@@ -111,6 +111,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGxlblxzcGVsbGVuU3BlbGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/Spellen/stats.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlbGxlblxzdGF0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/xampp2/htdocs/Reversi/ReversiRestApi/ReversiMvcApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

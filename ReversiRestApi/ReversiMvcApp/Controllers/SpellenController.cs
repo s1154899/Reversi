@@ -35,6 +35,15 @@ namespace ReversiMvcApp.Controllers
 
         }
 
+        public ActionResult SpelerStats()
+        {
+            ClaimsPrincipal currentUser = this.User;
+            var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            return View("stats", APIReversi.GetSpellenSpeler(currentUserID).Result);
+
+        }
+
         // GET: SpellenControllers/Create
         public ActionResult Create()
         {
