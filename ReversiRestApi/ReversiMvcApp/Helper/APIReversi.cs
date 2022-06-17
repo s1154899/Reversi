@@ -28,78 +28,114 @@ namespace ReversiMvcApp.Models
         }
 
         public static async Task<IEnumerable<Spel>> GetWaitingSpel() {
-            HttpResponseMessage response = await _client.GetAsync(_GetWaitingSpellen);
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync(_GetWaitingSpellen);
 
-            response.EnsureSuccessStatusCode();
-            var rawData = await response.Content.ReadAsStringAsync();
-            var spel  = JsonConvert.DeserializeObject<IEnumerable<Spel>>(rawData);
+                response.EnsureSuccessStatusCode();
+                var rawData = await response.Content.ReadAsStringAsync();
+                var spel = JsonConvert.DeserializeObject<IEnumerable<Spel>>(rawData);
 
-            return spel;
+                return spel;
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+                return new List<Spel>() { new Spel() };
+            }
 
         }
 
         public static async Task<Spel> GetSpel(string token)
         {
-            HttpResponseMessage response = await _client.GetAsync(_GetSpel+token);
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync(_GetSpel + token);
 
-            response.EnsureSuccessStatusCode();
-            var rawData = await response.Content.ReadAsStringAsync();
-            var spel = JsonConvert.DeserializeObject<Spel>(rawData);
+                response.EnsureSuccessStatusCode();
+                var rawData = await response.Content.ReadAsStringAsync();
+                var spel = JsonConvert.DeserializeObject<Spel>(rawData);
 
-            return spel;
+                return spel;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return new Spel();
+            }
 
         }
 
 
         public static async Task<IEnumerable<Spel>> GetSpellenSpeler(string spelerToken)
         {
-            _client.DefaultRequestHeaders.Clear();
+            try
+            {
+                _client.DefaultRequestHeaders.Clear();
 
-            _client.DefaultRequestHeaders.Add("spelerToken", spelerToken);
-            HttpResponseMessage response = await _client.GetAsync(_getSpellenSpeler);
+                _client.DefaultRequestHeaders.Add("spelerToken", spelerToken);
+                HttpResponseMessage response = await _client.GetAsync(_getSpellenSpeler);
 
-            response.EnsureSuccessStatusCode();
-            var rawData = await response.Content.ReadAsStringAsync();
-            var spel = JsonConvert.DeserializeObject<IEnumerable<Spel>>(rawData);
-            _client.DefaultRequestHeaders.Clear();
-            return spel;
+                response.EnsureSuccessStatusCode();
+                var rawData = await response.Content.ReadAsStringAsync();
+                var spel = JsonConvert.DeserializeObject<IEnumerable<Spel>>(rawData);
+                _client.DefaultRequestHeaders.Clear();
+                return spel;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return new List<Spel>() { new Spel() };
+            }
 
         }
 
         public static async Task<string> PostCreateSpel(string spelerToken, string omschrijving) {
+            try
+            {
+                _client.DefaultRequestHeaders.Clear();
 
-            _client.DefaultRequestHeaders.Clear();
-
-            _client.DefaultRequestHeaders.Add("speler1Token", spelerToken);
-            _client.DefaultRequestHeaders.Add("omschrijving", omschrijving);
+                _client.DefaultRequestHeaders.Add("speler1Token", spelerToken);
+                _client.DefaultRequestHeaders.Add("omschrijving", omschrijving);
 
 
-            var data = new StringContent("");
+                var data = new StringContent("");
 
-            HttpContent content = data;
+                HttpContent content = data;
 
-            HttpResponseMessage response = await _client.PostAsync(_PostCreateSpel,content);
-            _client.DefaultRequestHeaders.Clear();
-            return await response.Content.ReadAsStringAsync();
+                HttpResponseMessage response = await _client.PostAsync(_PostCreateSpel, content);
+                _client.DefaultRequestHeaders.Clear();
+                return await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+                return "";
+            }
         }
 
         public static async Task<string> PostJoin(string Token, string spelerToken) {
-            _client.DefaultRequestHeaders.Clear();
+            try { 
+                _client.DefaultRequestHeaders.Clear();
 
-            _client.DefaultRequestHeaders.Add("speler2Token", spelerToken);
+                _client.DefaultRequestHeaders.Add("speler2Token", spelerToken);
 
-            var data = new StringContent("");
+                var data = new StringContent("");
 
-            HttpContent content = data;
+                HttpContent content = data;
 
-            HttpResponseMessage response = await _client.PostAsync(_PostJoinSpel+Token, content);
-            _client.DefaultRequestHeaders.Clear();
-            return await response.Content.ReadAsStringAsync();
+                HttpResponseMessage response = await _client.PostAsync(_PostJoinSpel+Token, content);
+                _client.DefaultRequestHeaders.Clear();
+                return await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+                return "";
+            }
 
-        }
+}
 
         public static async Task<string> PostSurrender(string Token, string spelerToken)
         {
+            try { 
             _client.DefaultRequestHeaders.Clear();
 
             _client.DefaultRequestHeaders.Add("spelToken", Token);
@@ -112,11 +148,17 @@ namespace ReversiMvcApp.Models
             HttpResponseMessage response = await _client.PostAsync(_PostSurrender, content);
             _client.DefaultRequestHeaders.Clear();
             return await response.Content.ReadAsStringAsync();
-
         }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+                return "";
+            }
+
+}
 
         public static async Task<string> PostRemoveSPel(string Token)
         {
+            try { 
             _client.DefaultRequestHeaders.Clear();
 
             _client.DefaultRequestHeaders.Add("spelToken", Token);
@@ -128,13 +170,19 @@ namespace ReversiMvcApp.Models
             HttpResponseMessage response = await _client.PostAsync(_PostRemoveSPel , content);
             _client.DefaultRequestHeaders.Clear();
             return await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "";
+            }
 
         }
 
 
         public static async Task<string> PostDoZet(string spelToken, string rijZet,string kolomZet,string speler)
         {
-
+            try { 
             _client.DefaultRequestHeaders.Clear();
 
             _client.DefaultRequestHeaders.Add("spelToken", spelToken);
@@ -150,11 +198,17 @@ namespace ReversiMvcApp.Models
             HttpResponseMessage response = await _client.PostAsync(_PostZet, content);
             _client.DefaultRequestHeaders.Clear();
             return await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "";
+            }
         }
 
         public static async Task<string> PostDoPas(string spelToken, string speler)
         {
-
+            try { 
             _client.DefaultRequestHeaders.Clear();
 
             _client.DefaultRequestHeaders.Add("spelToken", spelToken);
@@ -168,22 +222,34 @@ namespace ReversiMvcApp.Models
             HttpResponseMessage response = await _client.PostAsync(_PostDoPas, content);
             _client.DefaultRequestHeaders.Clear();
             return await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "";
+            }
         }
 
 
 
         public static async Task<String> IsAfgelopen(string spelToken)
         {
-            _client.DefaultRequestHeaders.Clear();
+            try
+            {
+                _client.DefaultRequestHeaders.Clear();
 
-            _client.DefaultRequestHeaders.Add("spelToken", spelToken);
-            HttpResponseMessage response = await _client.GetAsync(_GetIsAfgelopen);
+                _client.DefaultRequestHeaders.Add("spelToken", spelToken);
+                HttpResponseMessage response = await _client.GetAsync(_GetIsAfgelopen);
 
-            response.EnsureSuccessStatusCode();
-            var rawData = await response.Content.ReadAsStringAsync();
-            _client.DefaultRequestHeaders.Clear();
-            return rawData;
-
+                response.EnsureSuccessStatusCode();
+                var rawData = await response.Content.ReadAsStringAsync();
+                _client.DefaultRequestHeaders.Clear();
+                return rawData;
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+                return "";
+            }
         }
 
     }

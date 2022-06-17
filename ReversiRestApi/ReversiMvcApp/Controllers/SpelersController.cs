@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using ReversiMvcApp.Models;
 
 namespace ReversiMvcApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SpelersController : Controller
     {
         private readonly reversiDbContext _context;
@@ -20,7 +22,7 @@ namespace ReversiMvcApp.Controllers
             _context = context;
         }
 
-        // GET: Spelers
+        // GET: Spelers  
         public async Task<IActionResult> Index()
         {
             return View(await _context.Spelers.ToListAsync());
@@ -66,7 +68,7 @@ namespace ReversiMvcApp.Controllers
             return View(spelers);
         }
 
-        // GET: Spelers/Edit/5
+        // GET: Spelers/Edit/5 
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)

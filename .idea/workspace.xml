@@ -4,22 +4,25 @@
     <list default="true" id="07519f0e-a67d-4a82-8ed0-6d3c96deb569" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/.vs/ReversiRestApi/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/SpelersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/SpelersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/SpellenController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Controllers/SpellenController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Helper/APIReversi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Helper/APIReversi.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Spellen/index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Spellen/index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Spellen/spellenSpeler.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Spellen/spellenSpeler.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Spellen/stats.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/Views/Spellen/stats.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiMvcApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiRestApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiRestApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiRestApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ReversiRestApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ref/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/bin/Debug/net6.0/ref/ReversiMvcApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ReversiMvcApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ref/ReversiMvcApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/Debug/net6.0/ref/ReversiMvcApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiMvcApp/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/bin/Debug/net6.0/ReversiRestApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/Debug/net6.0/ReversiRestApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/ReversiRestApi/ReversiRestApi/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,25 +46,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="258m932FdkuLHff4jaXA4ICfu2p" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/xampp2/htdocs/Reversi",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp2\htdocs\Reversi\ClientReversi\test" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -79,11 +86,12 @@
       <workItem from="1648028717008" duration="9554000" />
       <workItem from="1648128868882" duration="1987000" />
       <workItem from="1651402985558" duration="295000" />
+      <workItem from="1655414783229" duration="788000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1060" y="275" key="FileChooserDialogImpl" timestamp="1646913650416">
